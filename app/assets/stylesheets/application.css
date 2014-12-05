@@ -11,5 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require cascade/build-full
+ *= require cascade/site.css
  *= require_self
  */
