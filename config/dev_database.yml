@@ -1,0 +1,5 @@
+adapter: mysql
+database: actw_development
+host: 127.0.0.1
+username: root
+password:
