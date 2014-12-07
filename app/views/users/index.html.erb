@@ -55,22 +55,89 @@
   </div>
 
   <div class="col">
-    <!-- actitity -->
+    <!-- user defined -->
     <div class="col content">
         <div class="col">
-        <div class="cell panel">
+        <div class="cell panel content-panel">
           <div class="header">
             ユーザ定義 ブログ
           </div>
+          <% 5.times do %>
           <div class="body">
             <div class="cell">
-              This is a panel body.
+              <div class="col">
+                <div class="col width-fit mobile-width-fit">
+                  <span class="icon icon-bookmark color-blue"></span>
+                </div>
+                <div class="col width-fill mobile-width-fill">
+                  <span class="float-right">
+                    <span class="text date">
+                      <span class="icon icon-16 icon-time"></span>
+                      2014年12月07日 公開
+                    </span>
+                    <br>
+                  </span>
+                  <div class="col width-fill mobile-width-fill">
+                    <a href="#" class="fatty">ここにブログの記事タイトルが入ります。テストなんでも良い</a>
+                  </div>
+                  <div class="col tags">
+                    <ul class="nav blocks">
+                      <li><a href="#">Ruby</a></li>
+                      <li><a href="#">Rails</a></li>
+                      <li><a href="#">AWS</a></li>
+                    </ul>
+                  </div>
+                  <div class="col mt-5 summary">
+                    ユーザーのことを第一に考えた Visual Language (視覚的な言語) の作成に挑戦したということが述べられています。 「古典的な良いデザインの原則」と「技術や科学の可能性と革新」を融合した、そんなデザインを考えているようです。
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
+          <% end %>
         </div>
         </div>
     </div>
-    <!-- /actitity -->
+
+    <div class="col content">
+        <div class="col">
+        <div class="cell panel content-panel">
+          <div class="header">
+            ユーザ定義 レポジトリ
+          </div>
+          <% 3.times do %>
+          <div class="body">
+            <div class="cell">
+              <div class="col">
+                <div class="col width-fit mobile-width-fit">
+                  <span class="icon icon-bookmark color-blue"></span>
+                </div>
+                <div class="col width-fill mobile-width-fill">
+                  <span class="float-right">
+                    <span class="text date">
+                      <span class="icon icon-16 icon-time"></span>
+                      2014年12月07日 公開
+                    </span>
+                    <br>
+                  </span>
+                  <div class="col width-fill mobile-width-fill">
+                    <a href="#" class="fatty">act-weaver-app</a>
+                  </div>
+                  <div class="col mt-5 summary">
+                    ACT Weaverは、あなたの活動・成果物を一箇所にまとめるサービスです。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <% end %>
+        </div>
+        </div>
+    </div>
+
+    <!-- /user-defined-->
 
     <div class="col content">
       <hr>

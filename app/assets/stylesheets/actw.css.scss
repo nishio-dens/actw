@@ -1,3 +1,11 @@
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
 .site-header {
   background-color: #f7f7f9 !important;
 }
@@ -44,5 +52,13 @@
 }
 
 .main-content .panel .header {
+  color: #4e4e4e;
+}
+
+.content-panel .date {
+  color: #4e4e4e;
+}
+
+.content-panel .summary {
   color: #4e4e4e;
 }
