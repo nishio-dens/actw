@@ -1,3 +1,38 @@
 .site-header {
   background-color: #f7f7f9 !important;
 }
+
+/* user page */
+.user-header {
+}
+
+.user-header h1 {
+  margin-right: 10px;
+  color: #4e4e4e;
+}
+
+.user-header .user-image {
+  padding-right: 15px;
+  width: 150px;
+}
+
+.user-header ul {
+  margin: 0;
+  padding: 0;
+}
+
+.user-header li {
+  list-style-type: none;
+  display: inline;
+  margin-right: -10px;
+  padding: 0;
+  color: #333;
+}
+
+.user-header .activity li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 15px;
+  padding: 0;
+  color: #333;
+}
