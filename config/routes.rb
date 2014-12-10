@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root 'mypages#index'
+  root 'my_pages#index'
 
   resources :users do
   end
 
-  resources :mypages do
+  resources :my_pages do
   end
 
   resources :settings do
