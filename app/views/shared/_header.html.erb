@@ -13,7 +13,11 @@
         <li><a href="#" class="">ログイン</a></li>
     <% end %>
       <li><a href="#" class="">テストユーザ</a></li>
-      <li><a href="#"><span class="icon icon-16 icon-gear"></span></a></li>
+      <li>
+      <%= link_to settings_path do %>
+        <span class="icon icon-16 icon-gear"></span>
+      <% end %>
+      </li>
       <li><a href="#"><span class="icon icon-16 icon-signout"></span></a></li>
     </ul>
   </div>
