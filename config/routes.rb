@@ -1,23 +1,14 @@
 Rails.application.routes.draw do
   root 'mypages#index'
 
-  resources :users do
-  end
+  resources :users, only: [:index]
 
-  resources :mypages do
-  end
+  resources :mypages, only: [:index]
 
   scope :settings do
-    resources :manual_registrations do
-    end
-
-    resources :auto_registrations do
-    end
-
-    resources :filters do
-    end
-
-    resources :profiles do
-    end
+    resources :manual_registrations, only: [:new, :create, :edit, :update, :destroy]
+    resources :auto_registrations
+    resources :filters
+    resources :profiles
   end
 end
