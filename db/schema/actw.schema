@@ -1,3 +1,7 @@
+create_table :users, comment: 'ユーザ' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
+end
+
 create_table :filters, comment: 'フィルタ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, limit: 255, comment: 'フィルタ名'
