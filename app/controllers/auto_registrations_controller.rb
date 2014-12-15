@@ -1,0 +1,2 @@
+class AutoRegistrationsController < ApplicationController
+end

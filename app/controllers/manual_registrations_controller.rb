@@ -1,0 +1,2 @@
+class ManualRegistrationsController < ApplicationController
+end
