@@ -30,12 +30,10 @@ group :development do
   gem 'mails_viewer'
   gem 'quiet_assets'
   gem 'annotate'
-  gem 'rspec-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
   gem 'pry-doc'
-  gem 'pry-rails'
   gem 'pry-nav'
   gem 'rb-readline'
   gem 'guard-livereload'
@@ -44,10 +42,10 @@ end
 
 group :test do
   gem 'rspec'
-  gem 'pry-rails'
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
