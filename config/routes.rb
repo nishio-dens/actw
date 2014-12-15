@@ -7,6 +7,17 @@ Rails.application.routes.draw do
   resources :mypages do
   end
 
-  resources :settings do
+  scope :settings do
+    resources :manual_registrations do
+    end
+
+    resources :auto_registrations do
+    end
+
+    resources :filters do
+    end
+
+    resources :profiles do
+    end
   end
 end
