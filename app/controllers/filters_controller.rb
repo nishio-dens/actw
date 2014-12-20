@@ -3,6 +3,7 @@ class FiltersController < ApplicationController
   end
 
   def new
+    @form = Form::Filter.new
   end
 
   def create

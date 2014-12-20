@@ -1,0 +1,19 @@
+<div class="cell main-content">
+  <div class="page-header">
+  <div class="col">
+    <h1>フィルターを追加</h1>
+  </div>
+  </div><!-- /page-header -->
+
+  <div class="col">
+  <div class="cell">
+  <%= simple_form_for(@form, url: filters_path, method: :post) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :display_mypage, as: :boolean %>
+
+    <%= f.submit %>
+  <% end %>
+  </div>
+  </div>
+</div>
+
