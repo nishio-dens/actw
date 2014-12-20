@@ -17,8 +17,10 @@ SimpleForm.setup do |config|
       cc.wrapper tag: 'div', class: 'cell' do |ccc|
         ccc.use :input, wrap_with: { tag: 'div', class: 'left-input' }
 
-        ccc.wrapper tag: 'ul', class: 'parsley-error-list' do |cccc|
-          cccc.use :error, wrap_with: { tag: 'li', class: 'custom-error-message' }
+        ccc.wrapper tag: 'div', class: 'col' do |cccc|
+          cccc.wrapper tag: 'ul', class: 'parsley-error-list' do |ccccc|
+            ccccc.use :error, wrap_with: { tag: 'li', class: 'custom-error-message' }
+          end
         end
       end
     end
