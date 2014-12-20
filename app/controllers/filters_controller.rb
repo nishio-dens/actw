@@ -7,6 +7,11 @@ class FiltersController < ApplicationController
   end
 
   def create
+    @form = Form::Filter.new(filter_params)
+    if @form.valid?
+    else
+      render :new
+    end
   end
 
   def edit
@@ -16,5 +21,11 @@ class FiltersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def filter_params
+    params.require(:form_filter).permit(Form::Filter::PERMITTED_ATTRIBUTES)
   end
 end

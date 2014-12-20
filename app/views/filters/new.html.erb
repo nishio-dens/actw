@@ -7,7 +7,7 @@
 
   <div class="col">
   <div class="cell">
-  <%= simple_form_for(@form, url: filters_path, method: :post) do |f| %>
+  <%= simple_form_for(@form, url: filters_path, method: :post, wrapper: :cascade) do |f| %>
     <%= f.input :name %>
     <%= f.input :display_mypage, as: :boolean %>
 

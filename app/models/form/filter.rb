@@ -12,4 +12,5 @@
 #
 
 class Form::Filter < Filter
+  PERMITTED_ATTRIBUTES = %i(name display_order display_mypage)
 end
