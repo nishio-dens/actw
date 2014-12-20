@@ -11,13 +11,20 @@
     <%= f.input :name %>
     <%= f.input :display_mypage, as: :boolean %>
 
+    <!-- button -->
     <div class="col">
     <div class="cell">
-    <div class="actw-submit-button">
-    <%= f.button :submit, '追加する' %>
+      <div class="col width-1of6">
+        <div class="cell"></div>
+      </div>
+      <div class="col width-fill">
+        <div class="actw-submit-button cell">
+          <%= button_tag '追加する', type: :submit %>
+        </div>
+      </div>
     </div>
     </div>
-    </div>
+    <!-- button -->
   <% end %>
   </div>
   </div>
