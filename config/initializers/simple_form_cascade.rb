@@ -2,6 +2,10 @@ SimpleForm.setup do |config|
   config.wrappers :cascade, tag: 'div', class: 'col cascade-actw-form', error_class: 'error' do |c|
     c.use :html5
     c.use :placeholder
+    c.optional :maxlength
+    c.optional :min_max
+    c.optional :readonly
+    c.optional :pattern
 
     c.wrapper :label, tag: 'div', class: 'col width-1of6' do |cc|
       cc.wrapper tag: 'div', class: 'cell' do |ccc|
