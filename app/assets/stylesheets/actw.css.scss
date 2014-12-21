@@ -11,6 +11,10 @@
   margin-right: 10px;
 }
 
+.page-default-color {
+  color: #4a4a4a;
+}
+
 /* header */
 .navbar {
   background-color: #FFF;
@@ -41,3 +45,18 @@
   color: #9b59b6;
   font-size: 130%;
 }
+
+.user-summary .profile {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #eee;
+  border-image: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px 1px 1px 5px;
+  padding: 5px 5px 5px 10px;
+}
+
+
