@@ -1,6 +1,6 @@
 <div class="main-content-header">
   <div class="user-summary row">
-    <div class="col-md-2">
+    <div class="col-md-2 text-center">
       <img alt="" src="https://avatars2.githubusercontent.com/u/818452?v=3&s=460" width="120" class="user-image img-thumbnail">
     </div>
     <div class="col-md-10">
@@ -31,55 +31,67 @@
   </div> <!-- /user-summary -->
 </div>
 
-<div class="cell main-content">
-  <div class="col user-header">
-    <div class="cell">
-      <div class="page-header">
-        <div class="col width-fit">
-        </div>
-
-        <div class="col width-fill">
-          <div class="col">
-            <div class="col width-fit">
-              <h1>テストユーザ</h1>
-            </div>
-            <div class="col width-fill">
-              <ul>
-                <li><a href="#"> <span class="icon icon-32 icon-github"></span> </a></li>
-                <li><a href="#"> <span class="icon icon-32 icon-twitter"></span></a></li>
-                <li><a href="#"> <span class="icon icon-32 icon-envelope-alt"></span></a></li>
-                <li><a href="#"> <span class="icon icon-32 icon-link"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col">
-            <div class="cell activity">
-            </div>
-          </div>
-
-          <div class="col width-fill">
-            <div class="cell panel">
-              <div class="body">
-                <div class="cell">
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                  ここに自己紹介文が入ります。
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+<div class="row mt-10">
+  <div class="col-md-9"> <!-- main -->
+    <div class="panel panel-default actw-panel">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <h2> ユーザ定義 ブログ (28) </h2>
       </div>
-    </div>
-  </div>
+      <ul class="list-group"><!-- list-group -->
+      <% 5.times do %>
+      <li class="list-group-item">
 
+      <div class="row"> <!-- title -->
+        <div class="col-md-9">
+        <%= link_to '#' do %>
+          <h3> <i class="fa fa-bookmark"></i> ここにブログの記事タイトルが入ります。テストなんでも良い</h3>
+        <% end %>
+        </div>
+        <div class="col-md-3 text-right page-default-color">
+          <i class="fa fa-clock-o"></i> 2014年12月07日 公開
+        </div>
+      </div> <!-- /title -->
+
+      <div class="row"><!-- tag -->
+        <div class="col-md-12">
+        <span class="label label-info">AWS</span>
+        <span class="label label-info">Ruby</span>
+        <span class="label label-info">Rails</span>
+        </div>
+      </div>
+
+      <div class="row"><!-- summary -->
+        <div class="col-md-12 mt-10 page-default-color">
+          ユーザーのことを第一に考えた Visual Language (視覚的な言語) の作成に挑戦したということが述べられています。 「古典的な良いデザインの原則」と「技術や科学の可能性と革新」を融合した、そんなデザインを考えているようです。
+        </div>
+      </div>
+
+      <div class="row"><!-- edit -->
+        <div class="col-md-12 text-right">
+          <a href="#" class="">
+            <i class="fa fa-pencil"></i> 編集する
+          </a>
+          <a href="#" class="">
+            <i class="fa fa-times"></i> 削除する
+          </a>
+        </div>
+      </div>
+
+      </li>
+      <% end %>
+      </ul> <!-- /list-group -->
+    </div>
+  </div> <!-- /main -->
+
+  <div class="col-md-3">
+    <!-- sidebar -->
+    <%= render 'sidebar' %>
+    <!-- /sidebar -->
+  </div>
+</div>
+
+<div class="cell main-content">
   <div class="col">
     <!-- user defined -->
     <div class="col content">
@@ -117,13 +129,6 @@
                     ユーザーのことを第一に考えた Visual Language (視覚的な言語) の作成に挑戦したということが述べられています。 「古典的な良いデザインの原則」と「技術や科学の可能性と革新」を融合した、そんなデザインを考えているようです。
                   </div>
                   <div class="col actw-settings-right">
-                    <a href="#" class="">
-                      <span class="icon icon-16 icon-pencil"></span>編集する
-                    </a>
-
-                    <a href="#" class="">
-                      <span class="icon icon-16 icon-remove"></span>削除する
-                    </a>
                   </div>
                 </div>
               </div>
@@ -284,9 +289,6 @@
     </div>
     <!-- /actitity -->
 
-    <!-- sidebar -->
-    <%= render 'sidebar' %>
-    <!-- /sidebar -->
   </div>
 </div>
 

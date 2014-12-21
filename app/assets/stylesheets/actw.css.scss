@@ -42,7 +42,7 @@
 }
 
 .user-summary h1 a {
-  color: #9b59b6;
+  // color: #9b59b6;
   font-size: 130%;
 }
 
@@ -59,4 +59,20 @@
   padding: 5px 5px 5px 10px;
 }
 
+/* actw */
+.actw-panel {
+}
 
+.actw-panel .panel-heading h2 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.actw-panel h3 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
