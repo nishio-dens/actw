@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'simple_form'
 gem 'remotipart'
 gem 'migration_comments'
+gem 'twitter-bootstrap-rails'
 
 group :development do
   gem 'convergence'
