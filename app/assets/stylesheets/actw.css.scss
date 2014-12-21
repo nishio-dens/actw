@@ -1,3 +1,4 @@
+/* common */
 .mt-5 {
   margin-top: 5px;
 }
@@ -6,86 +7,7 @@
   margin-top: 10px;
 }
 
-.site-header {
-  background-color: #f7f7f9 !important;
-}
-
-.summary {
-  color: #4e4e4e;
-}
-
-/* user page */
-.user-header {
-}
-
-.user-header h1 {
-  margin-right: 10px;
-  color: #4e4e4e;
-}
-
-.user-header .user-image {
-  padding-right: 15px;
-  width: 150px;
-}
-
-.user-header ul {
-  margin: 0;
-  padding: 0;
-}
-
-.user-header li {
-  list-style-type: none;
-  display: inline;
-  margin-right: -10px;
-  padding: 0;
-  color: #333;
-}
-
-.user-header .activity li {
-  list-style-type: none;
-  display: inline;
-  margin-right: 15px;
-  padding: 0;
-  color: #333;
-}
-
-/* main */
-.main-content h2 {
-  font-size: 120% !important;
-  color: #4e4e4e;
-}
-
-.main-content .panel .header {
-  color: #4e4e4e;
-}
-
-.content-panel .date {
-  color: #4e4e4e;
-}
-
-.actw-menu li {
-  padding-bottom: 5px;
-}
-
-.actw-settings-right {
-  margin-top: 8px;
-  float: right;
-  text-align: right;
-}
-
-/* form */
-.cascade-actw-form {
-}
-
-.cascade-actw-form .left-input {
-  width: 95% !important;
-  float: left;
-}
-
-.actw-submit-button {
-}
-
-.actw-submit-button .hovered-button {
-  color: #FFF !important;
-  background-color: #4090ba !important;
+/* header */
+.navbar {
+  background-color: #FFF;
 }
