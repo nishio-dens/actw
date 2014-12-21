@@ -1,90 +1,83 @@
-<div class="col width-fill">
+<div class="list-group actw-sidemenu">
+  <h2>
+    管理メニュー
+  </h2>
+  <%= link_to new_manual_registration_path, class: 'list-group-item' do %>
+    <i class="fa fa-plus"></i>
+    アウトプット手動登録
+  <% end %>
 
-  <div class="col">
-    <div class="cell panel">
-      <div class="header">
-        管理メニュー
-      </div>
-      <div class="body">
-          <div class="col">
-            <div class="cell menu">
-              <ul class="stat left nav">
-                <li class="">
-                <%= link_to new_manual_registration_path do %>
-                  <span class="icon icon-16 icon-plus"></span>
-                  アウトプット手動登録
-                <% end %>
-                </li>
+  <%= link_to filters_path, class: 'list-group-item' do %>
+    <i class="fa fa-wrench"></i>
+    フィルター追加・編集
+  <% end %>
 
-                <li class="">
-                <a href="#" class="">
-                  <span class="icon icon-16 icon-wrench"></span>
-                  自動連携設定
-                </a>
-                </li>
+  <%= link_to '#', class: 'list-group-item' do %>
+    <i class="fa fa-wrench"></i>
+    自動連携設定
+  <% end %>
 
-                <li class="">
-                <%= link_to filters_path do %>
-                  <span class="icon icon-16 icon-wrench"></span>
-                  フィルター追加・編集
-                <% end %>
-                </li>
-
-                <li class="">
-                <a href="#" class="">
-                  <span class="icon icon-16 icon-user"></span>
-                  プロフィール編集
-                </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col">
-    <div class="cell panel">
-      <div class="body">
-        <div class="col">
-          <div class="cell menu">
-            <ul class="stat left nav">
-              <li class=""><a href="#" class=""><div class="label background-grey">1</div>ユーザ定義 ブログ</a></li>
-              <li class=""><a href="#" class=""><div class="label background-grey">1</div>ユーザ定義 リポジトリ</a></li>
-              <li class=""><a href="#" class=""><div class="label background-grey">2</div>すべて</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col">
-    <div class="cell panel">
-      <div class="header">
-        ジャンル別
-      </div>
-      <div class="body">
-          <div class="col">
-            <div class="cell menu">
-              <ul class="stat left nav">
-                <li class=""><a href="#" class=""><div class="label background-grey">123</div>ブログ</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">6530</div>コミット</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">4</div>リポジトリ</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">1</div>スライド</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">1</div>技術文書</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">1</div>作品</a></li>
-                <li class=""><a href="#" class=""><div class="label background-grey">1</div>その他</a></li>
-              </ul>
-            </div>
-          </div>
-
-      </div>
-    </div>
-  </div>
-
+  <%= link_to new_manual_registration_path, class: 'list-group-item' do %>
+    <i class="fa fa-user"></i>
+    プロフィール編集
+  <% end %>
 </div>
 
+<div class="list-group actw-sidemenu">
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    ユーザ定義 ブログ
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    ユーザ定義 リポジトリ
+  <% end %>
+</div>
+
+<div class="list-group actw-sidemenu">
+  <h2>
+    ジャンル別
+  </h2>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">250</span>
+    すべて
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    ブログ
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    コミット
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    リポジトリ
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    スライド
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    技術文書
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    作品
+  <% end %>
+
+  <%= link_to '#', class: 'list-group-item' do %>
+    <span class="badge">14</span>
+    その他
+  <% end %>
+
+</div>

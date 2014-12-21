@@ -20,6 +20,13 @@
   background-color: #FFF;
 }
 
+/* footer */
+.footer {
+  background-color: #eee;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 /* user */
 .user-summary {
   -moz-border-bottom-colors: none;
@@ -75,4 +82,14 @@
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 5px;
+}
+
+.actw-sidemenu {
+}
+
+.actw-sidemenu h2 {
+  font-size: 100%;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
 }
