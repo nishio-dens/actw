@@ -1,5 +1,8 @@
 class FiltersController < ApplicationController
   def index
+    @filters = Filter
+      .all
+      .order(display_mypage: :desc, display_order: :asc)
   end
 
   def new

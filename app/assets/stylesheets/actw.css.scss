@@ -15,6 +15,15 @@
   color: #4a4a4a;
 }
 
+.page-top {
+}
+
+.page-top h1 {
+  font-size: 130%;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
 /* header */
 .navbar {
   background-color: #FFF;
@@ -91,5 +100,12 @@
   font-size: 100%;
   font-weight: bold;
   margin: 0;
+  padding-bottom: 10px;
+}
+
+.actw-settings h2 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-top: 5px;
   padding-bottom: 10px;
 }

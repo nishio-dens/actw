@@ -9,7 +9,7 @@ create_table 'filters', comment: 'フィルタ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, limit: 255, comment: 'フィルタ名'
   t.int      :display_order, default: 1, comment: '表示順'
-  t.tinyint  :display_mypage, default: 1, comment: 'マイページ表示'
+  t.tinyint  :display_mypage, length: 1, default: 1, comment: 'マイページ表示'
   t.int      :user_id, comment: 'ユーザID'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'

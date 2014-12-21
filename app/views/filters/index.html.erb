@@ -1,78 +1,54 @@
-<div class="cell main-content">
-  <div class="page-header">
-  <div class="col">
-    <h1>テストユーザ さんのフィルター設定</h1>
-  </div>
+<div class="page-top">
+<h1>テストユーザ さんのフィルター設定</h1>
+</div>
 
-  <div class="col">
-    <div class="menu cell">
-      <ul class="nav">
-        <li class="">
-        <%= link_to new_filter_path, class: 'button icon-button' do %>
-          <span class="icon icon-16 icon-plus"></span>
-          フィルターを追加
+<div class="row">
+  <div class="col-md-12">
+  <%= link_to new_filter_path, class: 'btn btn-default' do %>
+    <i class="fa fa-plus"></i>
+    フィルターを追加
+  <% end %>
+
+  <%= link_to '#', class: 'btn btn-default' do %>
+    <i class="fa fa-wrench"></i>
+    フィルター表示順を変更
+  <% end %>
+
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12 actw-settings">
+  <h2>フィルター一覧</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>表示順</th>
+        <th>フィルター名</th>
+        <th>データ数</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @filters.each do |filter| %>
+    <tr>
+      <td>
+        <% if filter.display_mypage %>
+          <label class="label label-success">マイページに表示</label>
+        <% else %>
+          <label class="label label-danger">マイページに非表示</label>
         <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  </div> <!-- /page-header -->
-</div>
-
-<div class="cell main-content">
-  <div class="col">
-    <!-- user defined -->
-    <div class="cell panel content-panel">
-      <div class="header">
-        ユーザ定義 ブログ (28)
-      </div>
-      <% 5.times do %>
-        <div class="body">
-        <div class="cell">
-          <div class="col">
-            <div class="col width-fit mobile-width-fit">
-              <span class="icon icon-bookmark color-blue"></span>
-            </div>
-            <div class="col width-fill mobile-width-fill">
-              <span class="float-right">
-                <span class="text date">
-                  <span class="icon icon-16 icon-time"></span>
-                  2014年12月07日 公開
-                </span>
-                <br>
-              </span>
-              <div class="col width-fill mobile-width-fill">
-                <a href="#" class="fatty">ここにブログの記事タイトルが入ります。テストなんでも良い</a>
-              </div>
-              <div class="col tags">
-                <ul class="nav blocks">
-                  <li><a href="#">Ruby</a></li>
-                  <li><a href="#">Rails</a></li>
-                  <li><a href="#">AWS</a></li>
-                </ul>
-              </div>
-              <div class="col mt-5 summary">
-                ユーザーのことを第一に考えた Visual Language (視覚的な言語) の作成に挑戦したということが述べられています。 「古典的な良いデザインの原則」と「技術や科学の可能性と革新」を融合した、そんなデザインを考えているようです。
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      </td>
+      <td><%= filter.display_order %></td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
     <% end %>
-    </div>
-  </div>
-  <div class="cell pagination">
-    <ul class="nav">
-      <li class=""><a href="#" class="">Prev</a></li>
-      <li class=""><a href="#" class="">1</a></li>
-      <li class=""><a href="#" class="">2</a></li>
-      <li class=""><a href="#" class="">3</a></li>
-      <li class=""><a href="#" class="">4</a></li>
-      <li class=""><a href="#" class="">5</a></li>
-      <li class=""><a href="#" class="">Next</a></li>
-    </ul>
-  </div>
+    </tbody>
+  </table>
+</div> <!-- /actw-settings -->
 </div>
-
