@@ -2,86 +2,39 @@
   <div class="container">
     <div class="navbar-header">
       <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <%= link_to root_path, class: 'navbar-brand' do %>
-        <%= image_tag 'ACTW_logo.png', alt: 'ACT Weaver', height: '25px' %>
+        <%= image_tag 'ACTW_logo.png', alt: 'ACT Weaver', height: '23px' %>
       <% end %>
 
     </div>
     <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="dropdown">
-        <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <span class="caret"></span></a>
-        <ul role="menu" class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Nav header</li>
-          <li><a href="#">Separated link</a></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
-        </li>
+        <li><%= link_to 'マイページ', mypages_path %></li>
+        <li><%= link_to 'ユーザ検索', users_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../navbar/">Default</a></li>
-        <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-        <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+        <% if false %>
+        <li><%= link_to '#' do %> ユーザ登録 <% end %> </li>
+        <li><%= link_to '#' do %> <i class="fa fa-sign-in"></i> ログイン<% end %> </li>
+        <% end %>
+        <li class="dropdown">
+          <%= link_to '#', class: 'dropdown-toggle', area_expanded: 'false', role: 'button', data: { toggle: 'dropdown' } do %>
+            テストユーザ <span class="caret"></span>
+          <% end %>
+          <ul role="menu" class="dropdown-menu">
+            <li><a href="#">A</a></li>
+            <li><a href="#">B</a></li>
+            <li><a href="#">C</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><i class="fa fa-sign-out"></i> ログアウト</a></li>
+          </ul>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
-
-<div class="col width-fit mobile-width-fit sitemenu">
-  <div class="cell">
-  </div>
-</div>
-<div class="tags sitemenutags">
-  <div class="cell">
-    <ul class="nav">
-      <% if false %>
-        <li><a href="#" class="">ログイン</a></li>
-    <% end %>
-      <li><a href="#" class="">テストユーザ</a></li>
-      <li><a href="#"><span class="icon icon-16 icon-signout"></span></a></li>
-    </ul>
-  </div>
-</div>
-<div class="col width-fill sitemenu">
-  <div class="cell">
-    <ul class="col nav">
-      <li><a href="/users">ユーザ検索</a></li>
-    </ul>
-  </div>
-</div>
-<div class="sitemenu-responsive col collapsible collapsed">
-  <div class="col collapse-trigger">
-    <div class="cell">
-      <ul class="nav ">
-        <li class=""><a href="#" class=""><span class="icon icon-32 icon-align-justify"></span></a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="col">
-    <div class="left collapse-section">
-      <div class="cell">
-        <ul class="nav">
-          <li><a href="#">マイページ</a></li>
-          <li><a href="#">ユーザ検索</a></li>
-          <li><a href="#">設定</a></li>
-          <li><a href="#">ログアウト</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
