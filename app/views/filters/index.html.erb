@@ -25,27 +25,25 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th></th>
         <th>表示順</th>
         <th>フィルター名</th>
         <th>データ数</th>
-        <th></th>
+        <th>マイページトップ表示</th>
       </tr>
     </thead>
     <tbody>
     <% @filters.each do |filter| %>
     <tr>
+      <td><%= filter.display_order %></td>
+      <td><%= link_to filter.name, edit_filter_path(filter) %></td>
+      <td>0</td>
       <td>
         <% if filter.display_mypage %>
-          <label class="label label-success">マイページに表示</label>
+          <label class="label label-success">トップに表示</label>
         <% else %>
-          <label class="label label-danger">マイページに非表示</label>
+          <label class="label label-danger">トップでは非表示</label>
         <% end %>
       </td>
-      <td><%= filter.display_order %></td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
     </tr>
     <% end %>
     </tbody>
