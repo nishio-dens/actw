@@ -12,7 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require cascade/app/detector
-//= require cascade/app/yepnope
-//= require cascade/module/jquery/cascade/core
 //= require_tree .
