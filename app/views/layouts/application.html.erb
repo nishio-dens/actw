@@ -22,16 +22,12 @@
   <%= render 'shared/header' %>
 <!-- /header -->
 
-<div class="site-body centered-content">
-  <div class="site-center">
+<div class="container">
   <%= yield %>
-  </div>
 </div>
-<div class="site-center">
-  <div class="site-footer">
-    <%= render 'shared/footer' %>
-  </div>
-</div>
+
+<%= render 'shared/footer' %>
+
 <%= javascript_include_tag 'application' %>
 </body>
 </html>
