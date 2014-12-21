@@ -7,7 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">Project name</a>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag 'ACTW_logo.png', alt: 'ACT Weaver', height: '25px' %>
+      <% end %>
+
     </div>
     <div class="navbar-collapse collapse" id="navbar" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
@@ -39,10 +42,6 @@
 
 <div class="col width-fit mobile-width-fit sitemenu">
   <div class="cell">
-    <%= link_to root_path do %>
-      <%# <%= image_tag 'ACTW_logo_smart.png', alt: 'ACT Weaver', width: '40px' %>
-    <%= image_tag 'ACTW_logo.png', alt: 'ACT Weaver', width: '280px' %>
-  <% end %>
   </div>
 </div>
 <div class="tags sitemenutags">
