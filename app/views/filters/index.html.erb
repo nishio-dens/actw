@@ -9,11 +9,6 @@
     フィルターを追加
   <% end %>
 
-  <%= link_to '#', class: 'btn btn-default' do %>
-    <i class="fa fa-wrench"></i>
-    フィルター表示順を変更
-  <% end %>
-
   </div>
 </div>
 
@@ -36,7 +31,7 @@
     </thead>
     <tbody>
     <% @filters.each do |filter| %>
-    <tr class="item">
+    <tr class="item" data-model-name="filter" data-update-url="<%= sort_filter_path(filter) %>">
       <td><%= filter.display_order %></td>
       <td><%= link_to filter.name, edit_filter_path(filter) %></td>
       <td>0</td>

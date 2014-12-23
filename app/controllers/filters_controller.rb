@@ -4,7 +4,7 @@ class FiltersController < ApplicationController
   def index
     @filters = Filter
       .where(user_id: current_user.id)
-      .order(display_mypage: :desc, display_order: :asc)
+      .order(display_order: :asc)
   end
 
   def new
@@ -41,11 +41,21 @@ class FiltersController < ApplicationController
   end
 
   def sort
+    @form = Form::Filter.find_by(user_id: current_user.id, id: params[:id])
+    if @form.update_attributes(filter_sort_params)
+      render json: { success: true }
+    else
+      render json: { success: false }, status: 500
+    end
   end
 
   private
 
   def filter_params
     params.require(:form_filter).permit(Form::Filter::PERMITTED_ATTRIBUTES)
+  end
+
+  def filter_sort_params
+    params.require(:filter).permit(:display_order_position)
   end
 end

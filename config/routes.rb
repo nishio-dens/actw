@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :manual_registrations, only: [:new, :create, :edit, :update, :destroy]
     resources :auto_registrations
     resources :filters do
-      put :sort
+      member do
+        put :sort
+      end
     end
     resources :profiles
   end
