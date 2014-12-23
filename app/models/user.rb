@@ -21,7 +21,7 @@
 
 class User < ActiveRecord::Base
   devise :database_authenticatable, :omniauthable, :recoverable,
-         :registerable, :rememberable, :trackable, :validatable
+         :registerable, :trackable, :validatable
 
   def self.find_for_twitter_oauth(auth, sign_in_resource)
     user = User.where(provider: auth.provider, uid: auth.uid)
