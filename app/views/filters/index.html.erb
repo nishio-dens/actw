@@ -23,7 +23,6 @@
   <table class="table table-striped table-sortable">
     <thead>
       <tr>
-        <th>表示順</th>
         <th>フィルター名</th>
         <th>データ数</th>
         <th>マイページトップ表示</th>
@@ -32,7 +31,6 @@
     <tbody>
     <% @filters.each do |filter| %>
     <tr class="item" data-model-name="filter" data-update-url="<%= sort_filter_path(filter) %>">
-      <td><%= filter.display_order %></td>
       <td><%= link_to filter.name, edit_filter_path(filter) %></td>
       <td>0</td>
       <td>

@@ -40,6 +40,12 @@
   margin-top: 0px;
 }
 
+/* sort table */
+.table-sortable .item {
+  cursor: move;
+}
+
+
 /* header */
 .navbar {
   background-color: #FFF;
