@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  resources :sign_in, only: [:index]
+
   resources :users, only: [:index]
 
   resources :mypages, only: [:index]
