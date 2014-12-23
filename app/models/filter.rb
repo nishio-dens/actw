@@ -12,5 +12,11 @@
 #
 
 class Filter < ActiveRecord::Base
+  include RankedModel
+
+  belongs_to :user
+
+  ranks :display_order, with_same: :user_id
+
   validates :name, presence: true, length: { maximum: 255 }
 end

@@ -35,6 +35,12 @@ class FiltersController < ApplicationController
   end
 
   def destroy
+    @form = Form::Filter.find_by(user_id: current_user.id, id: params[:id])
+    @form.destroy
+    redirect_to filters_path, flash: { success: "#{@form.name} を削除しました。" }
+  end
+
+  def sort
   end
 
   private

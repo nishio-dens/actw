@@ -27,6 +27,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'ranked-model'
 
 group :development do
   gem 'convergence'

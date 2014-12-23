@@ -3,6 +3,14 @@
     <h1>フィルターを更新</h1>
     <hr>
 
+    <div class="row mb-10">
+      <div class="col-md-12 text-right">
+        <%= link_to filter_path(@form), class: 'btn btn-default', method: :delete, data: { confirm: '削除してもよろしいですか?' } do %>
+          <i class="fa fa-times"></i> 削除する
+        <% end %>
+      </div>
+    </div>
+
   <%= simple_form_for(@form, url: filter_path(@form), method: :put, wrapper: :horizontal_form) do |f| %>
     <%= render 'form', f: f %>
   <% end %>

@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   scope :settings do
     resources :manual_registrations, only: [:new, :create, :edit, :update, :destroy]
     resources :auto_registrations
-    resources :filters
+    resources :filters do
+      put :sort
+    end
     resources :profiles
   end
 end
