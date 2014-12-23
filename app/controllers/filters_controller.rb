@@ -1,7 +1,9 @@
 class FiltersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @filters = Filter
-      .all
+      .where(user_id: current_user.id)
       .order(display_mypage: :desc, display_order: :asc)
   end
 

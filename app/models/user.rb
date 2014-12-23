@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
          :registerable, :trackable, :validatable
 
   def self.find_for_twitter_oauth(auth, sign_in_resource)
-    user = User.where(provider: auth.provider, uid: auth.uid)
+    user = User.where(provider: auth.provider, uid: auth.uid).first
     if user.present?
       user
     else
