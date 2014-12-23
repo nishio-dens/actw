@@ -1,11 +1,21 @@
 create_table 'users', comment: 'ユーザ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, limit: 255, comment: 'ユーザ名'
+  t.varchar  :email, comment: 'メールアドレス'
+  t.varchar  :encrypted_password, comment: '暗号化済パスワード'
+  t.varchar  :reset_password_token, null: true, comment: 'リセットパスワードトークン'
+  t.datetime :reset_password_sent_at, null: true, comment: 'リセットパスワード送信日'
+  t.int      :sign_in_count, default: 0, comment: 'ログイン数'
+  t.datetime :current_sign_in_at, null: true, comment: '最近ログインした日時'
+  t.datetime :last_sign_in_at, null: true, comment: '最後にログインした日時'
+  t.varchar  :current_sign_in_ip, null: true, comment: '最近ログインしたログイン元IP'
+  t.varchar  :last_sign_in_ip, null: true, comment: '最後にログインしたログイン元IP'
   t.varchar  :uid, default: '', comment: 'UID'
   t.varchar  :provider, default: '', comment: 'プロバイダ'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
+  t.index [:email], unique: true
   t.index [:uid, :provider], unique: true
 end
 
