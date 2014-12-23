@@ -7,7 +7,7 @@ ja:
       # mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
-      html: '<abbr title="required">ABC</abbr>'
+      html: '<label class="label label-danger">必須</label> '
     error_notification:
       default_message: "Please review the problems below:"
     # Examples
