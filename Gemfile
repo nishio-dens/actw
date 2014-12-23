@@ -24,6 +24,9 @@ gem 'simple_form'
 gem 'remotipart'
 gem 'migration_comments'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'convergence'
