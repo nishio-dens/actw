@@ -17,6 +17,7 @@ class Form::Filter < Filter
   before_save :set_last_display_order
 
   def set_last_display_order
+    return if self.persisted?
     last_display_order = Filter
       .where(user_id: 4)
       .order(display_order: :desc)

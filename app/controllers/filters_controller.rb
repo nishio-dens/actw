@@ -14,16 +14,24 @@ class FiltersController < ApplicationController
   def create
     @form = Form::Filter.new(filter_params.merge(user_id: current_user.id))
     if @form.save
-      redirect_to filters_path, notice: "#{@form.name}を登録しました。"
+      redirect_to filters_path, flash: { success: "#{@form.name} を登録しました。" }
     else
       render :new
     end
   end
 
   def edit
+    @form = Form::Filter.find_by(user_id: current_user.id, id: params[:id])
   end
 
   def update
+    @form = Form::Filter.find_by(user_id: current_user.id, id: params[:id])
+    @form.attributes = filter_params
+    if @form.save
+      redirect_to filters_path, flash: { success: "#{@form.name} を更新しました。" }
+    else
+      render :new
+    end
   end
 
   def destroy
