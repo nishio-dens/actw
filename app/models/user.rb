@@ -20,6 +20,6 @@
 #
 
 class User < ActiveRecord::Base
-    devise :database_authenticatable, :omniauthable, :recoverable,
-           :registerable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :omniauthable, :recoverable,
+         :registerable, :rememberable, :trackable, :validatable
 end
