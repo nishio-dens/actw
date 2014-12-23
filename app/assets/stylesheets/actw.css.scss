@@ -15,6 +15,14 @@
   margin-right: 20px;
 }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
 .page-default-color {
   color: #4a4a4a;
 }
@@ -124,7 +132,6 @@
   font-size: 130%;
   font-weight: bold;
   margin: 0;
-  padding-bottom: 10px;
 }
 
 .actw-settings label {

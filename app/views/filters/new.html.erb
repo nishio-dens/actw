@@ -1,6 +1,7 @@
 <div class="row actw-settings">
   <div class="col-md-12">
     <h1>フィルターを追加</h1>
+    <hr>
 
   <%= simple_form_for(@form, url: filters_path, method: :post, wrapper: :horizontal_form) do |f| %>
     <%= f.input :name %>
