@@ -12,7 +12,7 @@ class FiltersController < ApplicationController
   end
 
   def create
-    @form = Form::Filter.new(filter_params)
+    @form = Form::Filter.new(filter_params.merge(user_id: current_user.id))
     if @form.valid?
     else
       render :new
