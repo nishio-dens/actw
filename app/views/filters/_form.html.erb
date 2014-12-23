@@ -1,0 +1,10 @@
+<%= f.input :name %>
+<%= f.input :display_mypage, as: :boolean, wrapper: :horizontal_radio_and_checkboxes %>
+
+<div class="form-action text-center mt-10">
+  <%= link_to filters_path, class: 'btn btn-default' do %>
+    <i class="fa fa-angle-double-left"></i> 一覧に戻る
+  <% end %>
+  <span class="mr-20"></span>
+  <%= button_tag '追加', type: :submit, class: 'btn btn-primary' %>
+</div>
