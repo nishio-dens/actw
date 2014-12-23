@@ -273,3 +273,6 @@ ja:
         username: ユーザ名
         email: メールアドレス
         password: パスワード
+      form/filter:
+        name: フィルター名
+        display_mypage: トップに表示
