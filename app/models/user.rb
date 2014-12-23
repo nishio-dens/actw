@@ -22,4 +22,19 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :omniauthable, :recoverable,
          :registerable, :rememberable, :trackable, :validatable
+
+  def self.find_for_twitter_oauth(auth, sign_in_resource)
+    user = User.where(provider: auth.provider, uid: auth.uid)
+    if user.present?
+      user
+    else
+      User.create(
+        name: auth.info.nickname,
+        provider: auth.provider,
+        uid: auth.uid,
+        email: auth.info.nickname + "@dummy.com",
+        password: Devise.friendly_token
+      )
+    end
+  end
 end
