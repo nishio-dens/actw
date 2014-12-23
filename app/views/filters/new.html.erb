@@ -1,32 +1,18 @@
-<div class="cell main-content">
-  <div class="page-header">
-  <div class="col">
+<div class="row actw-settings">
+  <div class="col-md-12">
     <h1>フィルターを追加</h1>
-  </div>
-  </div><!-- /page-header -->
 
-  <div class="col">
-  <div class="cell">
-  <%= simple_form_for(@form, url: filters_path, method: :post, wrapper: :cascade) do |f| %>
+  <%= simple_form_for(@form, url: filters_path, method: :post, wrapper: :horizontal_form) do |f| %>
     <%= f.input :name %>
-    <%= f.input :display_mypage, as: :boolean %>
+    <%= f.input :display_mypage, as: :boolean, wrapper: :horizontal_boolean %>
 
-    <!-- button -->
-    <div class="col">
-    <div class="cell">
-      <div class="col width-1of6">
-        <div class="cell"></div>
-      </div>
-      <div class="col width-fill">
-        <div class="actw-submit-button cell">
-          <%= button_tag '追加する', type: :submit %>
-        </div>
-      </div>
+    <div class="form-action text-center mt-10">
+      <%= link_to filters_path, class: 'btn btn-default' do %>
+        <i class="fa fa-angle-double-left"></i> フィルター一覧に戻る
+      <% end %>
+      <span class="mr-20"></span>
+      <%= button_tag '追加する', type: :submit, class: 'btn btn-primary' %>
     </div>
-    </div>
-    <!-- button -->
   <% end %>
   </div>
-  </div>
 </div>
-
