@@ -13,7 +13,8 @@ class FiltersController < ApplicationController
 
   def create
     @form = Form::Filter.new(filter_params.merge(user_id: current_user.id))
-    if @form.valid?
+    if @form.save
+      redirect_to filters_path, notice: "#{@form.name}を登録しました。"
     else
       render :new
     end

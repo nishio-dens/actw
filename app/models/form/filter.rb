@@ -13,4 +13,16 @@
 
 class Form::Filter < Filter
   PERMITTED_ATTRIBUTES = %i(name display_order display_mypage)
+
+  before_save :set_last_display_order
+
+  def set_last_display_order
+    last_display_order = Filter
+      .where(user_id: 4)
+      .order(display_order: :desc)
+      .pluck(:display_order)
+      .first
+    last_display_order = 0 if last_display_order.nil?
+    self.display_order = last_display_order + 1
+  end
 end
