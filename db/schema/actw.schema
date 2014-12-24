@@ -19,7 +19,7 @@ create_table 'users', comment: 'ユーザ' do |t|
   t.index [:uid, :provider], unique: true
 end
 
-create_table 'filters', comment: 'フィルタ' do |t|
+create_table :filters, comment: 'フィルタ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, limit: 255, comment: 'フィルタ名'
   t.int      :display_order, default: 1, comment: '表示順'
