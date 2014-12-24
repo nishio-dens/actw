@@ -28,6 +28,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'ranked-model'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 group :development do
   gem 'convergence'
