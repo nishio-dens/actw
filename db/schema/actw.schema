@@ -42,6 +42,7 @@ create_table :products, comment: '成果物' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :title, comment: 'タイトル'
   t.text     :description, null: true, comment: '概要'
+  t.text     :url, comment: 'URL'
   t.int      :user_id, comment: 'ユーザID'
   t.datetime :published_at, comment: '公開日'
   t.datetime :created_at, comment: '作成日時'
@@ -49,3 +50,6 @@ create_table :products, comment: '成果物' do |t|
 
   t.foreign_key :user_id, reference: :users, reference_column: :id
 end
+
+# タグ
+# TODO: フィルター成果物関連
