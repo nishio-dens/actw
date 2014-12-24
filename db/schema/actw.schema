@@ -54,7 +54,7 @@ end
 create_table :tags, comment: 'タグ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.varchar  :name, comment: 'タグ名'
-  t.int      :tagging_count, default: 0, comment: 'タグ数'
+  t.int      :taggings_count, default: 0, comment: 'タグ数'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
