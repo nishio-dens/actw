@@ -1,0 +1,13 @@
+# == Schema Information
+#
+# Table name: tags # タグ
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)      not null              # タグ名
+#  tagging_count :integer          default(0), not null  # タグ数
+#  created_at    :datetime         not null              # 作成日時
+#  updated_at    :datetime         not null              # 更新日時
+#
+
+class Tag < ActiveRecord::Base
+end
