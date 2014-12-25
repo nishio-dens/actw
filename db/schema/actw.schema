@@ -19,36 +19,11 @@ create_table :users, comment: 'ユーザ' do |t|
   t.index [:uid, :provider], unique: true
 end
 
-create_table :filters, comment: 'フィルタ' do |t|
-  t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
-  t.varchar  :name, limit: 255, comment: 'フィルタ名'
-  t.int      :display_order, default: 1, comment: '表示順'
-  t.tinyint  :display_mypage, limit: 1, default: 1, comment: 'マイページ表示'
-  t.int      :user_id, comment: 'ユーザID'
-  t.datetime :created_at, comment: '作成日時'
-  t.datetime :updated_at, comment: '更新日時'
-
-  t.foreign_key :user_id, reference: :users, reference_column: :id
-end
-
 create_table :categories, comment: 'カテゴリ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, comment: 'カテゴリ名'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
-end
-
-create_table :products, comment: '成果物' do |t|
-  t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
-  t.varchar  :title, comment: 'タイトル'
-  t.text     :description, null: true, comment: '概要'
-  t.text     :url, comment: 'URL'
-  t.int      :user_id, comment: 'ユーザID'
-  t.datetime :published_at, comment: '公開日'
-  t.datetime :created_at, comment: '作成日時'
-  t.datetime :updated_at, comment: '更新日時'
-
-  t.foreign_key :user_id, reference: :users, reference_column: :id
 end
 
 create_table :tags, comment: 'タグ' do |t|
@@ -74,6 +49,44 @@ create_table :taggings, comment: 'タギング' do |t|
 
   t.index [:tag_id, :taggable_id, :taggable_type, :context, :tagger_id, :tagger_type], name: 'taggings_index', unique: true
   t.index [:taggable_id, :taggable_type, :context]
+end
+
+create_table :products, comment: '成果物' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
+  t.varchar  :title, comment: 'タイトル'
+  t.text     :description, null: true, comment: '概要'
+  t.text     :url, comment: 'URL'
+  t.int      :category_id, null: true, comment: 'カテゴリID'
+  t.int      :user_id, comment: 'ユーザID'
+  t.datetime :published_at, comment: '公開日'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :user_id, reference: :users, reference_column: :id
+  t.foreign_key :category_id, reference: :categories, reference_column: :id
+end
+
+create_table :filters, comment: 'フィルタ' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
+  t.varchar  :name, limit: 255, comment: 'フィルタ名'
+  t.int      :display_order, default: 1, comment: '表示順'
+  t.tinyint  :display_mypage, limit: 1, default: 1, comment: 'マイページ表示'
+  t.int      :user_id, comment: 'ユーザID'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :user_id, reference: :users, reference_column: :id
+end
+
+create_table :product_filters, comment: '成果物/フィルタ関連' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :product_id, comment: '成果物ID'
+  t.int      :filter_id, comment: 'フィルタID'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :product_id, reference: :products, referenec_column: :id
+  t.foreign_key :filter_id, reference: :filters, reference_column: :id
 end
 
 # TODO: フィルター成果物関連
