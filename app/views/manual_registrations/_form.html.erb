@@ -2,9 +2,7 @@
 <%= f.input :url %>
 <%= f.input :description %>
 <%= f.input :category_id, collection: Category.all %>
-<div class="form-inline">
-<%= f.input :published_at %>
-</div>
+<%= f.input :published_at, wrapper: :inline_form %>
 
 <div class="form-action text-center mt-10">
   <%= link_to mypages_path, class: 'btn btn-default' do %>
