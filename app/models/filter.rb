@@ -15,6 +15,8 @@ class Filter < ActiveRecord::Base
   include RankedModel
 
   belongs_to :user
+  has_many :product_filters
+  has_many :products, through: :product_filters
 
   ranks :display_order, with_same: :user_id
 
