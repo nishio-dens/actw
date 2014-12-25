@@ -88,5 +88,3 @@ create_table :product_filters, comment: '成果物/フィルタ関連' do |t|
   t.foreign_key :product_id, reference: :products, reference_column: :id
   t.foreign_key :filter_id, reference: :filters, reference_column: :id
 end
-
-# TODO: フィルター成果物関連
