@@ -16,6 +16,11 @@
 class Product < ActiveRecord::Base
   acts_as_taggable_on :tags
 
+  belongs_to :category
+  belongs_to :user
+  has_many :product_filters
+  has_many :filters, through: :filter
+
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, length: { maximum: 4096 }
   validates :url, presence: true, length: { maximum: 4096 }
