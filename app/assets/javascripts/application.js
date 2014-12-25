@@ -15,4 +15,6 @@
 //= require jquery-ui/sortable
 //= require twitter/bootstrap
 //= require sortable
+//= require tag-it
+//= require common
 //= require_tree .
