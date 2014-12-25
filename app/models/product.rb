@@ -19,7 +19,9 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :product_filters
-  has_many :filters, through: :filter
+  has_many :filters, through: :product_filters
+
+  accepts_nested_attributes_for :product_filters, allow_destroy: true
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, length: { maximum: 4096 }
