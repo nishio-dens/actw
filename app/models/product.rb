@@ -15,4 +15,10 @@
 
 class Product < ActiveRecord::Base
   acts_as_taggable_on :tags
+
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :description, length: { maximum: 4096 }
+  validates :url, presence: true, length: { maximum: 4096 }
+  validates :user_id, presence: true
+  validates :published_at, presence: true
 end

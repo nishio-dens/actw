@@ -1,0 +1,15 @@
+<%= f.input :title %>
+<%= f.input :url %>
+<%= f.input :description %>
+
+<div class="form-action text-center mt-10">
+  <%= link_to mypages_path, class: 'btn btn-default' do %>
+    <i class="fa fa-angle-double-left"></i> マイページに戻る
+  <% end %>
+  <span class="mr-20"></span>
+  <% if f.object.persisted? %>
+    <%= button_tag '更新する', type: :submit, class: 'btn btn-primary' %>
+  <% else %>
+    <%= button_tag '登録する', type: :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
