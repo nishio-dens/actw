@@ -64,11 +64,11 @@ end
 create_table :taggings, comment: 'タギング' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.int      :tag_id, null: true, comment: 'タグID'
-  t.int      :taggable_id, null: true
-  t.varchar  :taggable_type, null: true
-  t.int      :tagger_id, null: true
-  t.varchar  :tagger_type, null: true
-  t.varchar  :context, limit: 128, null: true
+  t.int      :taggable_id, null: true, comment: 'タグ付け対象ID'
+  t.varchar  :taggable_type, null: true, comment: 'タグ付け対象クラス'
+  t.int      :tagger_id, null: true, comment: 'タグ所有者ID'
+  t.varchar  :tagger_type, null: true, comment: 'タグ所有者クラス'
+  t.varchar  :context, limit: 128, null: true, comment: 'タグ種別'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
