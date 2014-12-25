@@ -54,8 +54,8 @@ end
 create_table :products, comment: '成果物' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :title, comment: 'タイトル'
-  t.text     :description, null: true, comment: '概要'
   t.text     :url, comment: 'URL'
+  t.text     :description, null: true, comment: '概要'
   t.int      :category_id, null: true, comment: 'カテゴリID'
   t.int      :user_id, comment: 'ユーザID'
   t.datetime :published_at, comment: '公開日'
