@@ -20,4 +20,5 @@
 //= require sortable
 //= require tag-it
 //= require common
+//= require users
 //= require_tree .
