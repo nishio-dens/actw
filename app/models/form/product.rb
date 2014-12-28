@@ -4,8 +4,8 @@
 #
 #  id           :integer          not null, primary key # ID
 #  title        :string(255)      not null              # タイトル
-#  url          :text             not null              # URL
-#  description  :text                                   # 概要
+#  url          :text(65535)      not null              # URL
+#  description  :text(65535)                            # 概要
 #  category_id  :integer                                # カテゴリID
 #  user_id      :integer          not null              # ユーザID
 #  published_at :datetime         not null              # 公開日
