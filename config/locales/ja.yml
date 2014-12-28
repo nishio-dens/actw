@@ -188,6 +188,7 @@ ja:
       extension_white_list_error: 不正な拡張子を持つファイルのため、アップロードできませんでした。
       size_too_small: ! '%{attribute}は %{file_size} 以上で入力してください。'
       size_too_big: ! '%{attribute}は %{file_size} 以下で入力してください。'
+      invalid_url: URLの形式が正しくありません。
     template:
       body: 次の項目を確認してください。
       header:

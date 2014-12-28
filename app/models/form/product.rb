@@ -16,5 +16,7 @@
 class Form::Product < Product
   PERMITTED_ATTRIBUTES = %i(
     title url description category_id published_at tag_list
+    published_at(1i) published_at(2i) published_at(3i) published_at(4i) published_at(5i)
   )
+  REGISTRABLE_RELATIONS = [filter_ids: []]
 end
