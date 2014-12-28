@@ -42,7 +42,7 @@
         <h2> <%= filter.name %> (<%= filter.products.count %>) </h2>
       </div>
       <ul class="list-group"><!-- list-group -->
-      <% filter.products.each do |product| %>
+      <% filter.products.decorate.each do |product| %>
       <li class="list-group-item">
 
       <div class="row"> <!-- title -->
@@ -52,7 +52,7 @@
         <% end %>
         </div>
         <div class="col-md-3 text-right page-default-color">
-          <i class="fa fa-clock-o"></i> <%= product.published_at.to_s %> 公開
+          <i class="fa fa-clock-o"></i> <%= product.display_published_at %> 公開
         </div>
       </div> <!-- /title -->
 
