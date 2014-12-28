@@ -30,6 +30,9 @@ gem 'omniauth-twitter'
 gem 'ranked-model'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'draper'
+gem 'versionist'
+gem 'rabl'
+gem 'oj'
 
 group :development do
   gem 'convergence'
