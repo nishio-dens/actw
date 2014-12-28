@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
 
   validates :title, presence: true, length: { maximum: 255 }
   validates :description, length: { maximum: 4096 }
-  validates :url, presence: true, length: { maximum: 4096 }, url: true1
+  validates :url, presence: true, length: { maximum: 4096 }, url: true
   validates :user_id, presence: true
   validates :published_at, presence: true
 end
