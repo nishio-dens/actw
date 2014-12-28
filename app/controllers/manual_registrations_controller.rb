@@ -1,4 +1,6 @@
 class ManualRegistrationsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @form = Form::Product.new
   end
@@ -10,6 +12,19 @@ class ManualRegistrationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @form = Form::Product
+      .where(user_id: current_user.id)
+      .find(params[:id])
+  end
+
+  def update
+  end
+
+  def destroy
+    render text: 'TODO'
   end
 
   private
