@@ -82,6 +82,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     diffy (3.0.7)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -228,6 +233,7 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     remotipart (1.2.1)
+    request_store (1.1.0)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rspec (3.1.0)
@@ -310,6 +316,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   convergence
   devise
+  draper
   factory_girl
   factory_girl_rails
   guard

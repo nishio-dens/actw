@@ -36,22 +36,23 @@
   <%= render 'shared/flash_message' %>
 
   <div class="col-md-9"> <!-- main -->
+    <% @filters.each do |filter| %>
     <div class="panel panel-default actw-panel">
       <div class="panel-heading">
-        <h2> ユーザ定義 ブログ (28) </h2>
+        <h2> <%= filter.name %> (<%= filter.products.count %>) </h2>
       </div>
       <ul class="list-group"><!-- list-group -->
-      <% 5.times do %>
+      <% filter.products.each do |product| %>
       <li class="list-group-item">
 
       <div class="row"> <!-- title -->
         <div class="col-md-9">
-        <%= link_to '#' do %>
-          <h3> <i class="fa fa-bookmark"></i> ここにブログの記事タイトルが入ります。テストなんでも良い</h3>
+        <%= link_to product.url do %>
+          <h3> <i class="fa fa-bookmark"></i> <%= product.title %></h3>
         <% end %>
         </div>
         <div class="col-md-3 text-right page-default-color">
-          <i class="fa fa-clock-o"></i> 2014年12月07日 公開
+          <i class="fa fa-clock-o"></i> <%= product.published_at.to_s %> 公開
         </div>
       </div> <!-- /title -->
 
@@ -65,7 +66,7 @@
 
       <div class="row"><!-- summary -->
         <div class="col-md-12 mt-10 page-default-color">
-          ユーザーのことを第一に考えた Visual Language (視覚的な言語) の作成に挑戦したということが述べられています。 「古典的な良いデザインの原則」と「技術や科学の可能性と革新」を融合した、そんなデザインを考えているようです。
+          <%= product.description %>
         </div>
       </div>
 
@@ -95,6 +96,7 @@
         <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
       </ul>
     </nav>
+    <% end %><!-- /filter -->
 
     <div class="panel panel-default actw-panel">
       <div class="panel-heading">
