@@ -1,5 +1,6 @@
+<script id="productTmpl" type="text/x-jsrender">
 <li class="list-group-item">
-
+{{for product}}
 <div class="row"> <!-- title -->
   <div class="col-md-9">
     <a href="{{:url}}">
@@ -7,15 +8,15 @@
     </a>
   </div>
   <div class="col-md-3 text-right page-default-color">
-    <i class="fa fa-clock-o"></i> {{:published_at}} 公開
+    <i class="fa fa-clock-o"></i> {{:display_published_at}} 公開
   </div>
 </div> <!-- /title -->
 
 <div class="row"><!-- tag -->
   <div class="col-md-12">
-    {{#each tags}}
-    <span class="label label-info">{{=$value}}</span>
-    {{/each}}
+    {{for tags}}
+    <span class="label label-info">{{:#data}}</span>
+    {{/for}}
   </div>
 </div>
 
@@ -27,7 +28,7 @@
 
 <div class="row"><!-- edit -->
   <div class="col-md-12 text-right">
-    <a href="#" class="">
+    <a href="#" class="mr-10">
       <i class="fa fa-pencil"></i> 編集する
     </a>
     <a href="#" class="">
@@ -37,3 +38,5 @@
 </div>
 
 </li>
+{{/for}}
+</script>

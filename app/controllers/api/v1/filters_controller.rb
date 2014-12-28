@@ -7,5 +7,6 @@ class Api::V1::FiltersController < Api::V1::BaseController
       .where(filters: { id: params[:id] })
       .distinct
       .page(params[:page])
+      .decorate
   end
 end
