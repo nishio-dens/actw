@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-ui/sortable
+//= require jsrender
 //= require twitter/bootstrap
 //= require sortable
 //= require tag-it
