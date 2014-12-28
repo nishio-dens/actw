@@ -14,4 +14,7 @@
 #
 
 class Form::Product < Product
+  PERMITTED_ATTRIBUTES = %i(
+    title url description category_id published_at tag_list
+  )
 end

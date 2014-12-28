@@ -15,5 +15,8 @@ class ManualRegistrationsController < ApplicationController
   private
 
   def product_params
+    params
+      .require(:product_form)
+      .permit(Form::Product::PERMITTED_ATTRIBUTES)
   end
 end
