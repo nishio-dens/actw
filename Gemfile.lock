@@ -276,6 +276,8 @@ GEM
     smart_fixtures (0.0.3)
       database_rollbacker
       rspec
+    spinjs-rails (1.4)
+      rails (>= 3.1)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -353,6 +355,7 @@ DEPENDENCIES
   settingslogic
   simple_form
   smart_fixtures
+  spinjs-rails
   spring
   turbolinks
   twitter-bootstrap-rails

@@ -1,0 +1,40 @@
+<li class="list-group-item">
+
+<div class="row"> <!-- title -->
+  <div class="col-md-9">
+    <%= link_to product.url do %>
+      <h3> <i class="fa fa-bookmark"></i> <%= product.title %></h3>
+  <% end %>
+  </div>
+  <div class="col-md-3 text-right page-default-color">
+    <i class="fa fa-clock-o"></i> <%= product.display_published_at %> 公開
+  </div>
+</div> <!-- /title -->
+
+<div class="row"><!-- tag -->
+  <div class="col-md-12">
+    <span class="label label-info">AWS</span>
+    <span class="label label-info">Ruby</span>
+    <span class="label label-info">Rails</span>
+  </div>
+</div>
+
+<div class="row"><!-- summary -->
+  <div class="col-md-12 mt-10 page-default-color">
+    <%= product.description %>
+  </div>
+</div>
+
+<div class="row"><!-- edit -->
+  <div class="col-md-12 text-right">
+    <a href="#" class="">
+      <i class="fa fa-pencil"></i> 編集する
+    </a>
+    <a href="#" class="">
+      <i class="fa fa-times"></i> 削除する
+    </a>
+  </div>
+</div>
+
+</li>
+
