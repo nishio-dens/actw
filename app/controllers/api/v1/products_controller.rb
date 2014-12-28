@@ -1,6 +1,4 @@
 class Api::V1::ProductsController < Api::V1::BaseController
-  renpond_to :json
-
   before_action :authenticate_user!
 
   def index
