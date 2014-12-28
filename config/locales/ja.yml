@@ -276,3 +276,11 @@ ja:
       form/filter:
         name: フィルター名
         display_mypage: トップに表示
+      form/product:
+        title: タイトル
+        url: URL
+        description: 概要
+        category_id: カテゴリ
+        published_at: 公開日
+        tag_list: タグ
+        filters: 表示するフィルタ
