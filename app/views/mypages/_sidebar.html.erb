@@ -25,7 +25,7 @@
 
 <div class="list-group actw-sidemenu">
   <% @filters.each do |filter| %>
-  <%= link_to '#', class: 'list-group-item' do %>
+  <%= link_to user_user_filter_path(user_id: filter.user_id, id: filter.id), class: 'list-group-item' do %>
     <span class="badge"><%= filter.data_count %></span>
     <%= filter.name %>
   <% end %>
