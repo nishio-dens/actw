@@ -8,6 +8,7 @@ class Api::V1::FiltersController < Api::V1::BaseController
       .joins(:filters)
       .where(filters: { id: params[:id] })
       .distinct
+      .order(published_at: :desc)
       .page(params[:page])
       .per(DEFAULT_PAGE_PER)
       .decorate
