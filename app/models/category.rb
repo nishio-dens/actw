@@ -10,4 +10,7 @@
 #
 
 class Category < ActiveRecord::Base
+  scope :selectable_categories, -> do
+    where(selectable: true)
+  end
 end
