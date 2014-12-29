@@ -7,7 +7,7 @@ where not exists(
   from user_category_summaries summary
   where products.category_id = summary.category_id and users.id = summary.user_id
 )
-and products.category_id IS NOT NULL
+and products.category_id is not NULL
 ;
 
 -- ユーザが持つ成果物の数と、ユーザカテゴリ集計のカテゴリ「すべて」に保存されているデータ数が違う
@@ -28,7 +28,7 @@ inner join products
 on users.id = products.user_id
 left outer join user_category_summaries summary
 on summary.user_id = users.id and summary.category_id = products.category_id
-where products.category_id IS NOT NULL
+where products.category_id is not NULL
 group by users.id, products.category_id
 having expect_data_count != actual_data_count
 ;
