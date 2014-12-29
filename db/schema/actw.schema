@@ -32,6 +32,7 @@ end
 create_table :categories, comment: 'カテゴリ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
   t.varchar  :name, comment: 'カテゴリ名'
+  t.tinyint  :selectable, limit: 1, default: 1, comment: 'ユーザが選択可能'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 end
