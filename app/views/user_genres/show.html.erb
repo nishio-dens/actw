@@ -10,49 +10,7 @@
       </div>
       <ul class="list-group"><!-- list-group -->
 
-      <% @products.each do |product| %>
-        <li class="list-group-item">
-
-        <div class="row"> <!-- title -->
-          <div class="col-md-9">
-            <%= link_to product.url do %>
-              <h3> <i class="fa fa-bookmark"></i> <%= product.title %></h3>
-          <% end %>
-          </div>
-          <div class="col-md-3 text-right page-default-color">
-            <i class="fa fa-clock-o"></i> <%= product.display_published_at %> 公開
-          </div>
-        </div> <!-- /title -->
-
-        <div class="row"><!-- tag -->
-          <div class="col-md-12">
-            <% product.tags.each do |tag| %>
-              <span class="label label-info"><%= tag.name %></span>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="row"><!-- summary -->
-          <div class="col-md-12 mt-10 page-default-color">
-            <%= product.description %>
-          </div>
-        </div>
-
-        <% if current_user.try(:id) == product.user_id %>
-        <div class="row"><!-- edit -->
-          <div class="col-md-12 text-right">
-            <%= link_to edit_manual_registration_path(product), class: 'mr-10' do %>
-              <i class="fa fa-pencil"></i> 編集する
-            <% end %>
-            <%= link_to manual_registration_path(product), method: :delete, data: { confirm: '削除してもよろしいですか？' } do %>
-              <i class="fa fa-times"></i> 削除する
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-
-        </li>
-      <% end %>
+        <%= render 'shared/products', products: @products %>
 
       </ul> <!-- /list-group -->
     </div>
