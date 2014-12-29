@@ -32,7 +32,7 @@
     <% @filters.each do |filter| %>
     <tr class="item" data-model-name="filter" data-update-url="<%= sort_filter_path(filter) %>">
       <td><%= link_to filter.name, edit_filter_path(filter) %></td>
-      <td>0</td>
+      <td><%= filter.data_count %></td>
       <td>
         <% if filter.display_mypage %>
           <label class="label label-success">トップに表示</label>
