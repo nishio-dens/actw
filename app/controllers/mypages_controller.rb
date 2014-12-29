@@ -3,7 +3,7 @@ class MypagesController < ApplicationController
 
   def index
     @filters = Filter
-      .where(display_mypage: true, user_id: current_user.id)
+      .where(user_id: current_user.id)
       .order(:display_order)
   end
 end

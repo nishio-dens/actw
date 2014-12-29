@@ -36,7 +36,7 @@
   <%= render 'shared/flash_message' %>
 
   <div class="col-md-9"> <!-- main -->
-    <% @filters.each do |filter| %>
+    <% @filters.select(&:display_mypage).each do |filter| %>
     <div class="actw-filters">
     <div class="panel panel-default actw-panel">
       <div class="panel-heading">
@@ -48,17 +48,14 @@
         </div>
       </ul> <!-- /list-group -->
     </div>
-    <nav>
-      <ul class="pagination">
-        <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
-      </ul>
-    </nav>
+
+    <div class="text-left mb-20">
+    <%= link_to '#', class: 'btn btn-default' do %>
+      <i class="fa fa-angle-double-right"></i>
+      <%= filter.name %> の続きを見る
+    <% end %>
+    </div>
+
     </div>
     <% end %><!-- /filter -->
 

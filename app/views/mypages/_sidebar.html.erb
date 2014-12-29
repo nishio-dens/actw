@@ -24,14 +24,11 @@
 </div>
 
 <div class="list-group actw-sidemenu">
+  <% @filters.each do |filter| %>
   <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    ユーザ定義 ブログ
+    <span class="badge"><%= filter.data_count %></span>
+    <%= filter.name %>
   <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    ユーザ定義 リポジトリ
   <% end %>
 </div>
 
