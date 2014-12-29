@@ -14,7 +14,6 @@ class Category < ActiveRecord::Base
     where(selectable: true)
   end
 
-  # すべて
   def self.all_category_id
     1
   end
