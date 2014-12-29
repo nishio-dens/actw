@@ -29,14 +29,21 @@ class Product < ActiveRecord::Base
   validates :user_id, presence: true
   validates :published_at, presence: true
 
-  before_save :increment_filter_data_count_on_create
+  before_create :increment_filter_data_count_on_create
+  before_destroy :decrement_filter_data_count_and_destroy_product_filters
 
   private
 
   def increment_filter_data_count_on_create
-    return if self.new?
     self.filters.each do |filter|
-      filter.data_count += 1
+      Filter.increment_counter(:data_count, filter.id)
     end
+  end
+
+  def decrement_filter_data_count_and_destroy_product_filters
+    self.filters.each do |filter|
+      Filter.decrement_counter(:data_count, filter.id)
+    end
+    self.product_filters.each(&:destroy)
   end
 end
