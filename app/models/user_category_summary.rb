@@ -15,16 +15,18 @@ class UserCategorySummary < ActiveRecord::Base
   belongs_to :category
 
   def self.increment_data_count_of(user_id: nil, category_id: nil)
-     UserCategorySummary
-       .find_or_create_by(user_id: user_id, category_id: category_id)
-       .tap { |c| c.increment(:data_count) }
-       .tap { |c| c.save }
+    return if category_id.nil?
+    UserCategorySummary
+      .find_or_create_by(user_id: user_id, category_id: category_id)
+      .tap { |c| c.increment(:data_count) }
+      .tap { |c| c.save }
   end
 
   def self.decrement_data_count_of(user_id: nil, category_id: nil)
-     UserCategorySummary
-       .find_by(user_id: user_id, category_id: category_id)
-       .tap { |c| c.decrement(:data_count) }
-       .tap { |c| c.save }
+    return if category_id.nil?
+    UserCategorySummary
+      .find_by(user_id: user_id, category_id: category_id)
+      .tap { |c| c.decrement(:data_count) }
+      .tap { |c| c.save }
   end
 end
