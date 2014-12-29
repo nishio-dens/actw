@@ -33,6 +33,7 @@ class Product < ActiveRecord::Base
   before_destroy :decrement_filter_data_count_and_destroy_product_filters
   before_create :increment_user_category_summary_count
   before_update :update_user_category_summary_count
+  before_destroy :decrement_user_category_summary_count
 
   private
 
@@ -50,17 +51,25 @@ class Product < ActiveRecord::Base
   end
 
   def increment_user_category_summary_count
-    all_category = UserCategorySummary
-      .find_or_create_by(user_id: user_id, category_id: Category.all_category_id)
-    all_category.increment(:data_count)
-    all_category.save
-
-    target_category = UserCategorySummary
-      .find_or_create_by(user_id: user_id, category_id: self.category.id)
-    target_category.increment(:data_count)
-    target_category.save
+    UserCategorySummary
+      .increment_data_count_of(user_id: user_id, category_id: Category.all_category_id)
+    UserCategorySummary
+      .increment_data_count_of(user_id: user_id, category_id: category_id)
   end
 
   def update_user_category_summary_count
+    if category_id != category_id_was
+      UserCategorySummary
+        .decrement_data_count_of(user_id: user_id, category_id: category_id_was)
+      UserCategorySummary
+        .increment_data_count_of(user_id: user_id, category_id: category_id)
+    end
+  end
+
+  def decrement_user_category_summary_count
+    UserCategorySummary
+      .decrement_data_count_of(user_id: user_id, category_id: Category.all_category_id)
+    UserCategorySummary
+      .decrement_data_count_of(user_id: user_id, category_id: category_id)
   end
 end
