@@ -8,23 +8,29 @@ class ManualRegistrationsController < ApplicationController
   def create
     @form = Form::Product.new(product_params.merge(user_id: current_user.id))
     if @form.save
-      redirect_to mypages_path, flash: { success: "#{@form.title} を登録しました" }
+      redirect_to mypages_path, flash: { success: "#{@form.title} を登録しました。" }
     else
       render :new
     end
   end
 
   def edit
-    @form = Form::Product
-      .where(user_id: current_user.id)
-      .find(params[:id])
+    @form = Form::Product.find_by(id: params[:id], user_id: current_user.id)
   end
 
   def update
+    @form = Form::Product.find_by(id: params[:id], user_id: current_user.id)
+    if @form.update_attributes(product_params)
+      redirect_to mypages_path, flash: { success: "#{@form.title} を更新しました。" }
+    else
+      render :edit
+    end
   end
 
   def destroy
-    render text: 'TODO'
+    @form = Form::Product.find_by(id: params[:id], user_id: current_user.id)
+    @form.destroy
+    redirect_to mypages_path, flash: { success: "#{@form.title} を削除しました。" }
   end
 
   private
