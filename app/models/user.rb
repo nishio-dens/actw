@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
 
   has_many :filters
   has_one :user_profile
+  has_many :user_category_summaries
 
   def self.find_for_twitter_oauth(auth, sign_in_resource)
     user = User.where(provider: auth.provider, uid: auth.uid).first

@@ -13,4 +13,9 @@ class Category < ActiveRecord::Base
   scope :selectable_categories, -> do
     where(selectable: true)
   end
+
+  # すべて
+  def self.all_category_id
+    1
+  end
 end
