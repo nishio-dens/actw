@@ -14,6 +14,10 @@ class Category < ActiveRecord::Base
     where(selectable: true)
   end
 
+  def self.all_category
+    self.find(self.all_category_id)
+  end
+
   def self.all_category_id
     1
   end
