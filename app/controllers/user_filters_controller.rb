@@ -8,6 +8,7 @@ class UserFiltersController < ApplicationController
       .order(published_at: :desc)
       .distinct
       .page(params[:page])
+      .per(1)
       .decorate
   end
 end
