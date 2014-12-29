@@ -38,9 +38,9 @@
   </h2>
 
   <% @user.user_category_summaries.sort_by { |v| v.category_id }.each do |summary| %>
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge"><%= summary.data_count %></span>
-    <%= summary.category.name %>
-  <% end %>
+    <%= link_to user_user_genre_path(user_id: summary.user_id, id: summary.category_id), class: 'list-group-item' do %>
+      <span class="badge"><%= summary.data_count %></span>
+      <%= summary.category.name %>
+    <% end %>
   <% end %>
 </div>
