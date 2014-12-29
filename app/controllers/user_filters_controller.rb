@@ -3,6 +3,7 @@ class UserFiltersController < ApplicationController
     @user = User.find(params[:user_id])
     @filter = Filter.find_by(user_id: @user.id, id: params[:id])
     @products = Product
+      .preload(:tags)
       .joins(:product_filters)
       .where(product_filters: { filter_id: @filter.id })
       .order(published_at: :desc)
