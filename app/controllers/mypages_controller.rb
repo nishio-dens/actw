@@ -5,5 +5,9 @@ class MypagesController < ApplicationController
     @filters = Filter
       .where(user_id: current_user.id)
       .order(:display_order)
+    @user = User
+      .preload(:user_category_summaries)
+      .preload(:categories)
+      .find(current_user.id)
   end
 end

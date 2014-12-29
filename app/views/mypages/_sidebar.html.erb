@@ -37,44 +37,10 @@
     ジャンル別
   </h2>
 
+  <% @user.user_category_summaries.sort_by { |v| v.category_id }.each do |summary| %>
   <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">250</span>
-    すべて
+    <span class="badge"><%= summary.data_count %></span>
+    <%= summary.category.name %>
   <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    ブログ
   <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    コミット
-  <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    リポジトリ
-  <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    スライド
-  <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    技術文書
-  <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    作品
-  <% end %>
-
-  <%= link_to '#', class: 'list-group-item' do %>
-    <span class="badge">14</span>
-    その他
-  <% end %>
-
 </div>
