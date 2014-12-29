@@ -1,3 +1,6 @@
+SET FOREIGN_KEY_CHECKS=0;
+BEGIN;
+DELETE FROM `categories`;
 INSERT INTO `categories` (`id`, `name`, `selectable`, `created_at`, `updated_at`)
 VALUES
   (1, 'すべて', 0, '2014-12-30 00:00:00', '2014-12-30 00:00:00'),
@@ -9,3 +12,5 @@ VALUES
   (7, '作品', 1, '2014-12-26 00:00:00', '2014-12-26 00:00:00'),
   (99, 'その他', 0, '2014-12-26 00:00:00', '2014-12-26 00:00:00')
 ;
+COMMIT;
+SET FOREIGN_KEY_CHECKS=1;
