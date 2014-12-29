@@ -50,7 +50,7 @@
     </div>
 
     <div class="text-left mb-20">
-    <%= link_to '#', class: 'btn btn-default' do %>
+    <%= link_to user_user_filter_path(user_id: filter.user_id, id: filter.id), class: 'btn btn-default' do %>
       <i class="fa fa-angle-double-right"></i>
       <%= filter.name %> の続きを見る
     <% end %>

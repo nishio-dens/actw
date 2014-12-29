@@ -100,3 +100,15 @@ create_table :product_filters, comment: '成果物/フィルタ関連' do |t|
   t.foreign_key :product_id, reference: :products, reference_column: :id
   t.foreign_key :filter_id, reference: :filters, reference_column: :id
 end
+
+create_table :user_category_summaries, comment:  'ユーザ/カテゴリ集計' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :user_id, comment: 'ユーザID'
+  t.int      :category_id, comment: 'カテゴリID'
+  t.int      :data_count, default: 0, comment: '集計数'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :user_id, reference: :users, reference_column: :id
+  t.foreign_key :category_id, reference: :categories, reference_column: :id
+end
