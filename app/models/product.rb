@@ -28,4 +28,15 @@ class Product < ActiveRecord::Base
   validates :url, presence: true, length: { maximum: 4096 }, url: true
   validates :user_id, presence: true
   validates :published_at, presence: true
+
+  before_save :increment_filter_data_count_on_create
+
+  private
+
+  def increment_filter_data_count_on_create
+    return if self.new?
+    self.filters.each do |filter|
+      filter.data_count += 1
+    end
+  end
 end
