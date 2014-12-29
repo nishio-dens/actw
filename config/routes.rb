@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :users, only: [:index]
+  resources :users, only: [:index] do
+    resources :user_filters, only: [:show]
+    resources :user_genres, only: [:show]
+  end
 
   resources :mypages, only: [:index]
 
