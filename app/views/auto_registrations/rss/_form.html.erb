@@ -1,5 +1,9 @@
 <%= f.input :title %>
 <%= f.input :url %>
+<%= link_to_add_association '条件を追加する', f, :coordination_conditions, class: 'btn btn-default' %>
+<%= f.simple_fields_for :coordination_conditions do |con| %>
+  <%= render 'coordination_condition_fields', f: con %>
+<% end %>
 
 <div class="form-action text-center mt-10">
   <%= link_to auto_registrations_path, class: 'btn btn-default' do %>
