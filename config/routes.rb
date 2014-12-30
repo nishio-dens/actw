@@ -19,16 +19,16 @@ Rails.application.routes.draw do
     resources :manual_registrations, only: [:new, :create, :edit, :update, :destroy]
     resources :auto_registrations
 
+    namespace :auto_registrations do
+      resources :rss, only: [:new, :create, :edit, :update, :destroy]
+    end
+
     resources :filters do
       member do
         put :sort
       end
     end
     resources :profiles
-  end
-
-  scope :auto_registrations do
-    resources :rss, only: [:new, :create, :edit, :update, :destroy]
   end
 
   namespace :api, defaults: { format: :json } do

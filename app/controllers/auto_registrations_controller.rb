@@ -4,4 +4,7 @@ class AutoRegistrationsController < ApplicationController
   def index
     @coordinations = Coordination.where(user_id: current_user.id)
   end
+
+  def destroy
+  end
 end
