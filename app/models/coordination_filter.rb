@@ -9,7 +9,7 @@
 #  updated_at                :datetime         not null              # 更新日時
 #
 
-class CoordinationConditionFilter < ActiveRecord::Base
+class CoordinationFilter < ActiveRecord::Base
   belongs_to :coordination
   belongs_to :filter
 end
