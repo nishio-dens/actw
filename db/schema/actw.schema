@@ -131,3 +131,29 @@ create_table :division_coordination_types, comment: '連携先タイプ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.varchar  :name, comment: '連携先タイプ'
 end
+
+create_table :coordination_conditions, comment: '自動連携条件' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :coordination_id, comment: '自動連携ID'
+  t.varchar  :condition_key, limit: 50, comment: '連携条件キー'
+  t.varchar  :relation, limit: 10, comment: '比較演算'
+  t.varchar  :condition_value, comment: '連携条件値'
+  t.int      :category_id, comment: 'カテゴリID'
+  t.tinyint  :tagging, limit: 1, comment: 'タグ付け'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
+  t.foreign_key :category_id, reference: :categories, reference_column: :id
+end
+
+create_table :coordination_condition_filters, comment: '自動連携条件登録先フィルタ' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :coordination_condition_id, comment: '自動連携条件ID'
+  t.int      :filter_id, comment: 'フィルタID'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :coordination_condition_id, reference: :coordination_conditions, reference_column: :id
+  t.foreign_key :filter_id, reference: :filters, reference_column: :id
+end
