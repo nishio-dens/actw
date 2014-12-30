@@ -70,7 +70,7 @@ create_table :products, comment: '成果物' do |t|
   t.int      :category_id, null: true, comment: 'カテゴリID'
   t.int      :user_id, comment: 'ユーザID'
   t.datetime :published_at, comment: '公開日'
-  t.tinyint  :manual_registration, limit: 1, default: 1, comment: '手動登録'
+  t.tinyint  :manual_registration, limit: 1, default: 0, comment: '手動登録'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
