@@ -139,7 +139,7 @@ create_table :coordination_conditions, comment: '自動連携条件' do |t|
   t.varchar  :relation, limit: 10, comment: '比較演算'
   t.varchar  :condition_value, comment: '連携条件値'
   t.int      :category_id, comment: 'カテゴリID'
-  t.tinyint  :tagging, limit: 1, comment: 'タグ付け'
+  t.tinyint  :tagging, limit: 1, default: 1, comment: 'タグ付け'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
