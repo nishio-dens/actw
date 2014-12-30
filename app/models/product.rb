@@ -9,7 +9,7 @@
 #  category_id         :integer                                 # カテゴリID
 #  user_id             :integer          not null               # ユーザID
 #  published_at        :datetime         not null               # 公開日
-#  manual_registration :boolean          default("1"), not null # 手動登録
+#  manual_registration :boolean          default("0"), not null # 手動登録
 #  created_at          :datetime         not null               # 作成日時
 #  updated_at          :datetime         not null               # 更新日時
 #
