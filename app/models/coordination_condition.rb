@@ -17,4 +17,5 @@ class CoordinationCondition < ActiveRecord::Base
   belongs_to :coordination
   belongs_to :category
   has_many :coordination_condition_filters
+  has_many :filters, through: :coordination_condition_filters
 end

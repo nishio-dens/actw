@@ -1,6 +1,14 @@
-<div class="nested-fields form-inline mb-10 col-md-offset-2">
+<div class="nested-fields mb-10 col-md-offset-1">
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+  <div class="form-inline mb-10">
   <%= f.input :condition_key, label: false %>
   <%= f.input :relation, label: false %>
-  <%= f.input :condition_key, label: false %>
+  <%= f.input :condition_value, label: false %>
   <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
+  </div>
+
+  </div> <!-- /panel-body -->
+  </div>
 </div>
