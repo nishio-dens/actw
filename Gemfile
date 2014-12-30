@@ -33,6 +33,7 @@ gem 'draper'
 gem 'rabl'
 gem 'oj'
 gem 'cocoon'
+gem 'active_hash'
 
 group :development do
   gem 'convergence'
