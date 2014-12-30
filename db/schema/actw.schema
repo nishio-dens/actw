@@ -124,10 +124,10 @@ create_table :coordinations, comment: '自動連携' do |t|
   t.datetime :updated_at, comment: '更新日時'
 
   t.foreign_key :user_id, reference: :users, reference_column: :id
-  t.foreign_key :coordination_type_id, reference: :division_coodination_types, reference_column: :id
+  t.foreign_key :coordination_type_id, reference: :division_coordination_types, reference_column: :id
 end
 
-create_table :division_coodination_types, comment: '連携先タイプ' do |t|
+create_table :division_coordination_types, comment: '連携先タイプ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.varchar  :name, comment: '連携先タイプ'
 end
