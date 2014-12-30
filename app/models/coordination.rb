@@ -18,7 +18,9 @@ class Coordination < ActiveRecord::Base
   extend DivisionAssociationUseable
 
   belongs_to_division :coordination_type, class_name: 'Division::CoordinationType'
-  has_many :coordination_conditions
+  has_many :coordination_conditions, dependent: :destroy
+  has_many :coordination_filters, dependent: :destroy
+  has_many :filters, through: :coordination_filters
 
   accepts_nested_attributes_for :coordination_conditions, allow_destroy: true
 

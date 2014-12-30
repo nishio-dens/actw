@@ -106,7 +106,7 @@ SimpleForm.setup do |config|
     end
   end
 
-  config.wrappers :horizontal_radio_and_checkboxes, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
+  config.wrappers :horizontal_radio_and_checkboxes, tag: 'div', class: 'form-group clearfix', error_class: 'has-error' do |b|
     b.use :html5
     b.optional :readonly
 
