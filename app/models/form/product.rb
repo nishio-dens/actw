@@ -24,4 +24,12 @@ class Form::Product < Product
   REGISTRABLE_RELATIONS = [filter_ids: []]
 
   has_and_belongs_to_many_reserved_update :filters, through: :product_filters
+
+  before_save :setup_manual_registration
+
+  private
+
+  def setup_manual_registration
+    self.manual_registration = true
+  end
 end
