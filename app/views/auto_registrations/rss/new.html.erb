@@ -1,0 +1,10 @@
+<div class="row actw-settings">
+  <div class="col-md-12">
+    <h1><%= current_user.name %> さんのRSS自動連携 登録</h1>
+    <hr>
+
+  <%= simple_form_for(@form, url: auto_registrations_rss_index_path, method: :post, wrapper: :horizontal_form) do |f| %>
+    <%= render 'form', f: f %>
+  <% end %>
+  </div>
+</div>

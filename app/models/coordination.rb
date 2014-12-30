@@ -13,4 +13,14 @@
 #
 
 class Coordination < ActiveRecord::Base
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :url, length: { maximum: 4096 }
+
+  before_save :set_coordination_type
+
+  private
+
+  def set_coordination_type
+    self.coordination_type_id = 1
+  end
 end
