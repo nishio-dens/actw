@@ -21,6 +21,6 @@ class Coordination < ActiveRecord::Base
   private
 
   def set_coordination_type
-    self.coordination_type_id = 1
+    self.coordination_type_id = Division::CoordinationType::RSS
   end
 end
