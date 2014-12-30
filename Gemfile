@@ -32,6 +32,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'draper'
 gem 'rabl'
 gem 'oj'
+gem 'cocoon'
 
 group :development do
   gem 'convergence'

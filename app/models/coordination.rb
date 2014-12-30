@@ -18,6 +18,8 @@ class Coordination < ActiveRecord::Base
   belongs_to_division :coordination_type, class_name: 'Division::CoordinationType'
   has_many :coordination_conditions
 
+  accepts_nested_attributes_for :coordination_conditions, allow_destroy: true
+
   validates :title, presence: true, length: { maximum: 255 }
   validates :url, length: { maximum: 4096 }
 end
