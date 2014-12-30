@@ -131,6 +131,7 @@ end
 create_table :division_coordination_types, comment: '連携先タイプ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.varchar  :name, comment: '連携先タイプ'
+  t.varchar  :division_type, limit: 10, comment: '区分値'
 end
 
 create_table :coordination_conditions, comment: '自動連携条件' do |t|

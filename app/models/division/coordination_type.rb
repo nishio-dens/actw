@@ -7,4 +7,6 @@
 #
 
 class Division::CoordinationType < ActiveRecord::Base
+  include ActsAsDivision
+  enum_accessor :division_type
 end
