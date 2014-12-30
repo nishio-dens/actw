@@ -1,11 +1,20 @@
 <%= f.input :title %>
 <%= f.input :url %>
+
+<hr>
+
+<div class="col-md-offset-1">
+<h2>連携条件</h2>
+</div>
+
 <%= f.simple_fields_for :coordination_conditions do |con| %>
   <%= render 'coordination_condition_fields', f: con %>
 <% end %>
-<div class="links">
+
+<div class="form-group links col-md-offset-1">
 <%= link_to_add_association '条件を追加する', f, :coordination_conditions, class: 'btn btn-default' %>
 </div>
+
 
 <div class="form-action text-center mt-10">
   <%= link_to auto_registrations_path, class: 'btn btn-default' do %>
