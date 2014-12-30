@@ -19,6 +19,8 @@ class Form::Rss < Coordination
     title url
   )
 
+  validates :url, presence: true
+
   before_save :set_coordination_type
 
   private
