@@ -14,4 +14,6 @@
 #
 
 class CoordinationCondition < ActiveRecord::Base
+  belongs_to :coordination
+  belongs_to :category
 end
