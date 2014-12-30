@@ -13,6 +13,10 @@
 #
 
 class Coordination < ActiveRecord::Base
+  extend DivisionAssociationUseable
+
+  belongs_to_division :coordination_type, class_name: 'Division::CoordinationType'
+
   validates :title, presence: true, length: { maximum: 255 }
   validates :url, length: { maximum: 4096 }
 end
