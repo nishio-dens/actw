@@ -10,6 +10,6 @@
 #
 
 class CoordinationConditionFilter < ActiveRecord::Base
-  belongs_to :coordination_condition
+  belongs_to :coordination
   belongs_to :filter
 end

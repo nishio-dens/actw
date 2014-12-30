@@ -120,12 +120,15 @@ create_table :coordinations, comment: '自動連携' do |t|
   t.varchar  :title, comment: '連携名'
   t.text     :url, null: true, comment: '連携先URL'
   t.int      :coordination_type_id, comment: '連携先タイプ'
+  t.tinyint  :tagging, limit: 1, default: 1, comment: 'タグ付け'
+  t.int      :category_id, comment: 'カテゴリID'
   t.datetime :last_updated_at, null: true, comment: '最終連携日時'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
   t.foreign_key :user_id, reference: :users, reference_column: :id
   t.foreign_key :coordination_type_id, reference: :division_coordination_types, reference_column: :id
+  t.foreign_key :category_id, reference: :categories, reference_column: :id
 end
 
 create_table :division_coordination_types, comment: '連携先タイプ' do |t|
@@ -134,28 +137,25 @@ create_table :division_coordination_types, comment: '連携先タイプ' do |t|
   t.varchar  :division_type, limit: 10, comment: '区分値'
 end
 
+create_table :coordination_filters, comment: '自動連携登録先フィルタ' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :coordination_id, comment: '自動連携ID'
+  t.int      :filter_id, comment: 'フィルタID'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
+  t.foreign_key :filter_id, reference: :filters, reference_column: :id
+end
+
 create_table :coordination_conditions, comment: '自動連携条件' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.int      :coordination_id, comment: '自動連携ID'
   t.varchar  :condition_key, limit: 50, comment: '連携条件キー'
   t.varchar  :relation, limit: 10, comment: '比較演算'
   t.varchar  :condition_value, comment: '連携条件値'
-  t.int      :category_id, comment: 'カテゴリID'
-  t.tinyint  :tagging, limit: 1, default: 1, comment: 'タグ付け'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
   t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
-  t.foreign_key :category_id, reference: :categories, reference_column: :id
-end
-
-create_table :coordination_condition_filters, comment: '自動連携条件登録先フィルタ' do |t|
-  t.int      :id, primary_key: true, extra: 'auto_increment'
-  t.int      :coordination_condition_id, comment: '自動連携条件ID'
-  t.int      :filter_id, comment: 'フィルタID'
-  t.datetime :created_at, comment: '作成日時'
-  t.datetime :updated_at, comment: '更新日時'
-
-  t.foreign_key :coordination_condition_id, reference: :coordination_conditions, reference_column: :id
-  t.foreign_key :filter_id, reference: :filters, reference_column: :id
 end
