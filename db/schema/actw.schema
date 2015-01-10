@@ -164,3 +164,16 @@ create_table :coordination_exclude_conditions, comment: '自動連携除外条�
 
   t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
 end
+
+create_table :auto_coordination_job_histories, comment: '自動連携ジョブ履歴' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :coordination_id, comment: '自動連携ID'
+  t.varchar  :job_id, limit: 40, comment: 'ジョブID'
+  t.int      :job_status_id, comment: 'ジョブステータス'
+  t.varchar  :program_id, limit: 10, null: true, comment: '実行プログラム'
+  t.datetime :finished_at, null: true, comment: 'ジョブ実行完了日時'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
+end
