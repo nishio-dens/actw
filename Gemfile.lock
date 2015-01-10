@@ -75,6 +75,7 @@ GEM
       diffy
       mysql2
       slop
+    curb (0.8.6)
     database_rollbacker (0.0.2)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -102,6 +103,10 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    feedjira (1.5.0)
+      curb (~> 0.8)
+      loofah (~> 2.0)
+      sax-machine (~> 1.0)
     ffi (1.9.6)
     formatador (0.2.5)
     globalid (0.3.0)
@@ -274,6 +279,7 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
+    sax-machine (1.1.1)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -343,6 +349,7 @@ DEPENDENCIES
   draper
   factory_girl
   factory_girl_rails
+  feedjira
   guard
   guard-livereload
   guard-rspec

@@ -35,6 +35,7 @@ gem 'oj'
 gem 'cocoon'
 gem 'active_hash'
 gem 'sidekiq'
+gem 'feedjira'
 
 group :development do
   gem 'convergence'
