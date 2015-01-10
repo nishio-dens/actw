@@ -25,7 +25,7 @@
 <h2>連携除外条件設定（以下条件を満たすものは、自動連携から除外します）</h2>
 </div>
 
-<%= f.simple_fields_for :coordination_conditions do |con| %>
+<%= f.simple_fields_for :coordination_exclude_conditions do |con| %>
   <%= render 'coordination_exclude_condition_fields', f: con %>
 <% end %>
 
