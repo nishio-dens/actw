@@ -1,4 +1,6 @@
 class AutoRegistrations::RssController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @form = Form::Rss.new
   end
@@ -17,6 +19,13 @@ class AutoRegistrations::RssController < ApplicationController
   end
 
   def update
+    @form = Form::Rss.find_by(user_id: current_user.id, id: params[:id])
+    @form.attributes = registration_params
+    if @form.save
+      redirect_to auto_registrations_path, flash: { success: "#{@form.title} を更新しました。" }
+    else
+      render :edit
+    end
   end
 
   private
