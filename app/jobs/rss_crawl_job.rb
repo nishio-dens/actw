@@ -4,7 +4,6 @@ class RssCrawlJob < ActiveJob::Base
   def perform(coordination)
     history = AutoCoordinationJobHistory.create_history(self.job_id, coordination)
     begin
-      Rails.logger.info("call #{coordination.id}")
       history.record_success
     rescue
       history.record_failure
