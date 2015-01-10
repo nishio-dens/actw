@@ -6,7 +6,7 @@ class AutoRegistrations::RssController < ApplicationController
   def create
     @form = Form::Rss.new(registration_params.merge(user_id: current_user.id))
     if @form.save
-      redirect_to auto_registrations_path, flash: { success: "#{form.title} を登録しました。" }
+      redirect_to auto_registrations_path, flash: { success: "#{@form.title} を登録しました。" }
     else
       render :new
     end
