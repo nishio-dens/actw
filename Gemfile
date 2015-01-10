@@ -34,6 +34,7 @@ gem 'rabl'
 gem 'oj'
 gem 'cocoon'
 gem 'active_hash'
+gem 'sidekiq'
 
 group :development do
   gem 'convergence'
