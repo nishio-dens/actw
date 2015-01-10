@@ -4,7 +4,6 @@ class AutoRegistrations::RssController < ApplicationController
   end
 
   def create
-    binding.pry
     @form = Form::Rss.new(registration_params)
     if @form.save
     else
