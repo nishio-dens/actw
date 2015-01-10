@@ -40,4 +40,9 @@ Rails.application.routes.draw do
       resources :filters, only: [:show]
     end
   end
+
+  if Rails.env.development?
+    require 'sidekiq/web'
+    mount Sidekiq::Web, at: '/sidekiq'
+  end
 end
