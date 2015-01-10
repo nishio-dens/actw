@@ -4,7 +4,8 @@ class Division::RssConditionKey < ActiveHash::Base
   self.data = [
     { id: 'title'        , name: 'タイトル' },
     { id: 'author_name'  , name: '著者名' },
-    { id: 'tag'          , name: 'タグ' }
+    { id: 'tag'          , name: 'タグ' },
+    { id: 'url'          , name: 'URL' },
   ]
 
   enum_accessor :id
