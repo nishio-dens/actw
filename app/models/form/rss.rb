@@ -26,6 +26,6 @@ class Form::Rss < Coordination
   private
 
   def set_coordination_type
-    self.coordination_type_id = Division::CoordinationType::RSS
+    self.coordination_type = Division::CoordinationType::RSS.id
   end
 end
