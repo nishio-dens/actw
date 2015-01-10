@@ -13,6 +13,7 @@ class AutoRegistrations::RssController < ApplicationController
   end
 
   def edit
+    @form = Form::Rss.find_by(user_id: current_user.id, id: params[:id])
   end
 
   def update
