@@ -28,6 +28,7 @@ class AutoCoordinationJobHistory < ActiveRecord::Base
 
   def record_success
     self.tap do |h|
+      h.coordination.update(last_updated_at: Time.current)
       h.job_status_id = Division::JobStatus::SUCCESS.id
       h.finished_at = Time.current
       h.save
