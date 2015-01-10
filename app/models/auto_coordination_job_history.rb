@@ -13,5 +13,32 @@
 #
 
 class AutoCoordinationJobHistory < ActiveRecord::Base
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to :coordination
+  belongs_to_active_hash :job_status, class_name: 'Division::JobStatus'
+
+  def self.create_history(job_id, coordination)
+    AutoCoordinationJobHistory.create(
+      job_id: job_id,
+      coordination_id: coordination.id,
+      job_status_id: Division::JobStatus::RUNNING.id
+    )
+  end
+
+  def record_success
+    self.tap do |h|
+      h.job_status_id = Division::JobStatus::SUCCESS.id
+      h.finished_at = Time.current
+      h.save
+    end
+  end
+
+  def record_failure
+    self.tap do |h|
+      h.job_status_id = Division::JobStatus::FAILURE.id
+      h.finished_at = Time.current
+      h.save
+    end
+  end
 end
