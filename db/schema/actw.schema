@@ -159,3 +159,15 @@ create_table :coordination_conditions, comment: '自動連携条件' do |t|
 
   t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
 end
+
+create_table :coordination_exclude_conditions, comment: '自動連携除外条件' do |t|
+  t.int      :id, primary_key: true, extra: 'auto_increment'
+  t.int      :coordination_id, comment: '自動連携ID'
+  t.varchar  :condition_key, limit: 50, comment: '連携条件キー'
+  t.varchar  :predicate, limit: 10, comment: '検索述語'
+  t.varchar  :condition_value, comment: '条件値'
+  t.datetime :created_at, comment: '作成日時'
+  t.datetime :updated_at, comment: '更新日時'
+
+  t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
+end
