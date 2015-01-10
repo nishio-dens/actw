@@ -29,12 +29,14 @@
     <thead>
       <tr>
         <th>自動連携名称</th>
+        <th>最終連携日時</th>
       </tr>
     </thead>
     <tbody>
     <% @coordinations.each do |coordination| %>
     <tr class="item">
-      <td><%= link_to coordination.title, '#' %></td>
+      <td><%= link_to coordination.title, edit_auto_registrations_rss_path(coordination) %></td>
+      <td><%= coordination.last_updated_at.try(:to_s) %></td>
     </tr>
     <% end %>
     </tbody>
