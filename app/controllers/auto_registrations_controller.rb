@@ -7,6 +7,7 @@ class AutoRegistrationsController < ApplicationController
 
   def execute_coordination
     coordination = Coordination.find_by(user_id: current_user.id, id: params[:id])
+    RssCrawlJob.perform_later(coordination)
     redirect_to auto_registrations_path, flash: { success: "#{coordination.title} の設定を元に、外部サイトからのデータ取得を開始しました。" }
   end
 

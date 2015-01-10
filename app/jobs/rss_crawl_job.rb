@@ -1,7 +1,7 @@
 class RssCrawlJob < ActiveJob::Base
   queue_as :default
 
-  def perform(*args)
-    Rails.logger.info('call')
+  def perform(coordination)
+    Rails.logger.info("call #{coordination.id}")
   end
 end
