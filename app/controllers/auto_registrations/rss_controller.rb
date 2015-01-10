@@ -4,7 +4,7 @@ class AutoRegistrations::RssController < ApplicationController
   end
 
   def create
-    @form = Form::Rss.new(registration_params)
+    @form = Form::Rss.new(registration_params.merge(user_id: current_user.id))
     if @form.save
     else
       render :new

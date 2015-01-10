@@ -121,7 +121,7 @@ create_table :coordinations, comment: '自動連携' do |t|
   t.text     :url, null: true, comment: '連携先URL'
   t.varchar  :coordination_type, limit: 20, comment: '連携先タイプ'
   t.tinyint  :tagging, limit: 1, default: 1, comment: 'タグ付け'
-  t.int      :category_id, comment: 'カテゴリID'
+  t.int      :category_id, null: true, comment: 'カテゴリID'
   t.datetime :last_updated_at, null: true, comment: '最終連携日時'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
