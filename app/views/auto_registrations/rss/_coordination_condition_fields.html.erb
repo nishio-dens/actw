@@ -6,7 +6,7 @@
   <%= f.input :condition_key, label: false,
     collection: Division::RssField.all, include_blank: false %>
   <%= f.input :condition_value, label: false %>
-  <%= f.input :relation, label: false,
+  <%= f.input :predicate, label: false,
     collection: Division::SearchPredicate.all, include_blank: false %>
   <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
   </div>
