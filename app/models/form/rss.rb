@@ -17,7 +17,9 @@
 class Form::Rss < Coordination
   PERMITTED_ATTRIBUTES = [
     :title, :url, :category_id, :tagging,
-    filter_ids: [], coordination_conditions_attributes: []
+    filter_ids: [],
+    coordination_conditions_attributes: %i(id condition_key predicate condition_value _destroy),
+    coordination_exclude_conditions_attributes: %i(id condition_key predicate condition_value _destroy)
   ]
 
   validates :url, presence: true
