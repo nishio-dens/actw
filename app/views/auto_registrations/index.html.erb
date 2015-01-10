@@ -30,6 +30,7 @@
       <tr>
         <th>自動連携名称</th>
         <th>最終連携日時</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
     <tr class="item">
       <td><%= link_to coordination.title, edit_auto_registrations_rss_path(coordination) %></td>
       <td><%= coordination.last_updated_at.try(:to_s) %></td>
+      <td><%= link_to '即時連携実行', execute_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-default', data: { confirm: "#{coordination.title} の連携設定を元に、外部サイトからデータ取得を行います。よろしいですか。" } %></td>
     </tr>
     <% end %>
     </tbody>

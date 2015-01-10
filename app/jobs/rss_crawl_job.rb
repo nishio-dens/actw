@@ -2,6 +2,6 @@ class RssCrawlJob < ActiveJob::Base
   queue_as :default
 
   def perform(*args)
-    # Do something later
+    Rails.logger.info('call')
   end
 end

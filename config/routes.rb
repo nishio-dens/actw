@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   scope :settings do
     resources :manual_registrations, only: [:new, :create, :edit, :update, :destroy]
-    resources :auto_registrations
+    resources :auto_registrations do
+      member do
+        post :execute_coordination
+      end
+    end
 
     namespace :auto_registrations do
       resources :rss, only: [:new, :create, :edit, :update, :destroy]
