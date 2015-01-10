@@ -119,7 +119,7 @@ create_table :coordinations, comment: '自動連携' do |t|
   t.int      :user_id, comment: 'ユーザID'
   t.varchar  :title, comment: '連携名'
   t.text     :url, null: true, comment: '連携先URL'
-  t.int      :coordination_type_id, comment: '連携先タイプ'
+  t.varchar  :coordination_type, limit: 20, comment: '連携先タイプ'
   t.tinyint  :tagging, limit: 1, default: 1, comment: 'タグ付け'
   t.int      :category_id, comment: 'カテゴリID'
   t.datetime :last_updated_at, null: true, comment: '最終連携日時'
@@ -127,14 +127,7 @@ create_table :coordinations, comment: '自動連携' do |t|
   t.datetime :updated_at, comment: '更新日時'
 
   t.foreign_key :user_id, reference: :users, reference_column: :id
-  t.foreign_key :coordination_type_id, reference: :division_coordination_types, reference_column: :id
   t.foreign_key :category_id, reference: :categories, reference_column: :id
-end
-
-create_table :division_coordination_types, comment: '連携先タイプ' do |t|
-  t.int      :id, primary_key: true, extra: 'auto_increment'
-  t.varchar  :name, comment: '連携先タイプ'
-  t.varchar  :division_type, limit: 10, comment: '区分値'
 end
 
 create_table :coordination_filters, comment: '自動連携登録先フィルタ' do |t|

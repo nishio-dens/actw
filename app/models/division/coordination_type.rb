@@ -1,13 +1,11 @@
-# == Schema Information
-#
-# Table name: division_coordination_types # 連携先タイプ
-#
-#  id            :integer          not null, primary key
-#  name          :string(255)      not null              # 連携先タイプ
-#  division_type :string(10)       not null              # 区分値
-#
+class Division::CoordinationType < ActiveHash::Base
+  include ActiveHash::Enum
 
-class Division::CoordinationType < ActiveRecord::Base
-  include ActsAsDivision
-  enum_accessor :division_type
+  self.data = [
+    { id: 'rss'          , name: 'RSS' },
+    { id: 'github'       , name: 'Github' },
+    { id: 'qiita'        , name: 'Qiita' }
+  ]
+
+  enum_accessor :id
 end
