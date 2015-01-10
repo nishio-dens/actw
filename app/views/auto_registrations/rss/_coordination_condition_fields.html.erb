@@ -4,10 +4,10 @@
 
   <div class="form-inline mb-10">
   <%= f.input :condition_key, label: false,
-    collection: Division::RssConditionKey.all, include_blank: false %>
+    collection: Division::RssField.all, include_blank: false %>
   <%= f.input :condition_value, label: false %>
   <%= f.input :relation, label: false,
-    collection: Division::RssRelation.all, include_blank: false %>
+    collection: Division::SearchPredicate.all, include_blank: false %>
   <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
   </div>
 

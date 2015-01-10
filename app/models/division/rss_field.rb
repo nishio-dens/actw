@@ -1,4 +1,4 @@
-class Division::RssConditionKey < ActiveHash::Base
+class Division::RssField < ActiveHash::Base
   include ActiveHash::Enum
 
   self.data = [
