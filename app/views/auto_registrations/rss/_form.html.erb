@@ -7,7 +7,7 @@
 <hr>
 
 <div class="col-md-offset-1">
-<h2>高度な設定 連携条件設定（以下条件を満たすもののみ、自動連携を行います)</h2>
+<h2>高度な設定 連携条件設定（以下条件を満たすもののみ、自動連携を行います）</h2>
 </div>
 
 <%= f.simple_fields_for :coordination_conditions do |con| %>
@@ -16,6 +16,21 @@
 
 <div class="form-group links col-md-offset-1">
 <%= link_to_add_association '連携条件を追加する', f, :coordination_conditions, class: 'btn btn-default' %>
+</div>
+
+
+<hr>
+
+<div class="col-md-offset-1">
+<h2>高度な設定 連携除外条件設定（以下条件を満たすものは、自動連携から除外します）</h2>
+</div>
+
+<%= f.simple_fields_for :coordination_conditions do |con| %>
+  <%= render 'coordination_exclude_condition_fields', f: con %>
+<% end %>
+
+<div class="form-group links col-md-offset-1">
+<%= link_to_add_association '連携除外条件を追加する', f, :coordination_conditions, class: 'btn btn-default' %>
 </div>
 
 
