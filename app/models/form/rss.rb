@@ -15,9 +15,10 @@
 #
 
 class Form::Rss < Coordination
-  PERMITTED_ATTRIBUTES = %i(
-    title url
-  )
+  PERMITTED_ATTRIBUTES = [
+    :title, :url, :category_id, :tagging,
+    filter_ids: [], coordination_conditions_attributes: []
+  ]
 
   validates :url, presence: true
 
