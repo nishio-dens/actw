@@ -50,6 +50,7 @@ group :development do
   gem 'rb-readline'
   gem 'guard-livereload'
   gem 'letter_opener_web'
+  gem 'sinatra', require: false
 end
 
 group :test do
