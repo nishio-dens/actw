@@ -21,5 +21,6 @@ module Actw
     config.i18n.default_locale = :ja
 
     config.autoload_paths += Dir["#{config.root}/app/validators"]
+    config.active_job.queue_adapter = :sidekiq
   end
 end
