@@ -4,11 +4,21 @@ class AutoRegistrations::RssController < ApplicationController
   end
 
   def create
+    @form = Form::Rss.new(registration_params)
+    if @form.save
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+  end
+
+  private
+
+  def registration_params
   end
 end
