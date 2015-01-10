@@ -169,7 +169,7 @@ create_table :auto_coordination_job_histories, comment: '自動連携ジョブ�
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.int      :coordination_id, comment: '自動連携ID'
   t.varchar  :job_id, limit: 40, comment: 'ジョブID'
-  t.int      :job_status_id, comment: 'ジョブステータス'
+  t.varchar  :job_status_id, limit: 10, comment: 'ジョブステータス'
   t.varchar  :request_program_id, limit: 10, null: true, comment: '要求元プログラム'
   t.datetime :finished_at, null: true, comment: 'ジョブ実行完了日時'
   t.datetime :created_at, comment: '作成日時'
