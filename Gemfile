@@ -63,7 +63,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'smart_fixtures'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
