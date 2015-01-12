@@ -24,5 +24,6 @@ FactoryGirl.define do
     name 'ユーザ'
     sequence(:email) { |i| "test#{i}@example.com" }
     password 'password'
+    sequence(:uid)
   end
 end
