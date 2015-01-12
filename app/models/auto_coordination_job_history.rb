@@ -7,7 +7,7 @@
 #  job_id             :string(40)       not null              # ジョブID
 #  job_status_id      :string(10)       not null              # ジョブステータス
 #  request_program_id :string(10)                             # 要求元プログラム
-#  error_message      :text(65535)      not null              # 実行エラーメッセージ
+#  error_message      :text(65535)                            # 実行エラーメッセージ
 #  finished_at        :datetime                               # ジョブ実行完了日時
 #  created_at         :datetime         not null              # 作成日時
 #  updated_at         :datetime         not null              # 更新日時
