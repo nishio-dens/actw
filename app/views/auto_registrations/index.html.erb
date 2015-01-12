@@ -51,9 +51,9 @@
         <%= link_to '即時連携実行', execute_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-default', data: { confirm: "#{coordination.title} の連携設定を元に、外部サイトからデータ取得を行います。よろしいですか。" } %>
 
         <% if coordination.coordination %>
-        <%= link_to '連携停止', switch_auto_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-warning', name: 'stop', data: { confirm: "#{coordination.title} の自動連携を停止します。よろしいですか。" } %>
+        <%= link_to '連携停止', switch_auto_coordination_auto_registration_path(coordination, switch: 'stop'), method: :post, class: 'btn btn-warning', data: { confirm: "#{coordination.title} の自動連携を停止します。よろしいですか。" } %>
         <% else %>
-        <%= link_to '連携再開', switch_auto_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-primary', name: 'start', data: { confirm: "#{coordination.title} の自動連携を再開します。よろしいですか。" } %>
+        <%= link_to '連携再開', switch_auto_coordination_auto_registration_path(coordination, switch: 'start'), method: :post, class: 'btn btn-primary', data: { confirm: "#{coordination.title} の自動連携を再開します。よろしいですか。" } %>
         <% end %>
       </td>
     </tr>

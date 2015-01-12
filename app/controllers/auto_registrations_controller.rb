@@ -13,6 +13,15 @@ class AutoRegistrationsController < ApplicationController
   end
 
   def switch_auto_coordination
+    coordination = Coordination.find_by(user_id: current_user.id, id: params[:id])
+    if params[:switch] == 'start'
+      coordination.update(coordination: true)
+    else
+      coordination.update(coordination: false)
+    end
+    action_name = coordination.coordination ? "再開" : "停止"
+    redirect_to auto_registrations_path,
+      flash: { success: "#{coordination.title} の自動連携を#{action_name}しました" }
   end
 
   def destroy
