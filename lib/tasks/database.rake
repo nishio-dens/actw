@@ -4,7 +4,7 @@ require 'active_record'
 namespace :db do
   task :apply do
     env = ENV['RAILS_ENV'] || 'development'
-    rails_database = YAML.load("#{Rails.root}/config/database.yml")
+    rails_database = YAML.load(File.open("#{Rails.root}/config/database.yml").read)
 
     File.open("#{Rails.root}/config/dev_database.yml", "w") do |f|
       settings = rails_database[env]

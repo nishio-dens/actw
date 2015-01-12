@@ -1,5 +1,10 @@
-adapter: mysql
+adapter: mysql2
+encoding: utf8
 database: actw_development
-host: 127.0.0.1
+pool: 5
+timeout: 5000
 username: root
-password:
+password: 
+collation: utf8_bin
+adapter: mysql
+host: 127.0.0.1
