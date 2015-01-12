@@ -19,7 +19,7 @@
 #  updated_at             :datetime         not null               # 更新日時
 #
 
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe User, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
