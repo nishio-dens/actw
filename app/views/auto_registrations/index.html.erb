@@ -29,6 +29,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th></th>
         <th>自動連携名称</th>
         <th>最終連携日時</th>
         <th></th>
@@ -37,9 +38,24 @@
     <tbody>
     <% @coordinations.each do |coordination| %>
     <tr class="item">
+      <td width="70px">
+      <% if coordination.coordination %>
+        <label class="label label-success">連携中</label>
+      <% else %>
+        <label class="label label-danger">停止中</label>
+      <% end %>
+      </td>
       <td><%= link_to coordination.title, edit_auto_registrations_rss_path(coordination) %></td>
       <td><%= coordination.last_updated_at.try(:to_s) %></td>
-      <td><%= link_to '即時連携実行', execute_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-default', data: { confirm: "#{coordination.title} の連携設定を元に、外部サイトからデータ取得を行います。よろしいですか。" } %></td>
+      <td>
+        <%= link_to '即時連携実行', execute_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-default', data: { confirm: "#{coordination.title} の連携設定を元に、外部サイトからデータ取得を行います。よろしいですか。" } %>
+
+        <% if coordination.coordination %>
+        <%= link_to '連携停止', switch_auto_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-warning', name: 'stop', data: { confirm: "#{coordination.title} の自動連携を停止します。よろしいですか。" } %>
+        <% else %>
+        <%= link_to '連携再開', switch_auto_coordination_auto_registration_path(coordination), method: :post, class: 'btn btn-primary', name: 'start', data: { confirm: "#{coordination.title} の自動連携を再開します。よろしいですか。" } %>
+        <% end %>
+      </td>
     </tr>
     <% end %>
     </tbody>

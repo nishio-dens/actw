@@ -12,6 +12,9 @@ class AutoRegistrationsController < ApplicationController
       flash: { success: "#{coordination.title} の設定を元に、外部サイトからのデータ取得を開始しました。" }
   end
 
+  def switch_auto_coordination
+  end
+
   def destroy
   end
 end

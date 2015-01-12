@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :auto_registrations do
       member do
         post :execute_coordination
+        post :switch_auto_coordination
       end
     end
 
