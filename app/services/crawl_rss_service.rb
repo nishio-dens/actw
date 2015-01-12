@@ -1,7 +1,7 @@
 require 'feedjira'
 
 class CrawlRssService < BaseService
-  def execute(coordination)
+  def execute(coordination, job_number)
     feed = Feedjira::Feed.fetch_and_parse(coordination.url)
     # TODO conditionを考慮
     feed.entries.each do |entry|
@@ -13,7 +13,7 @@ class CrawlRssService < BaseService
 
   def persist_entry(coordination, entry)
     # TODO フィルタ追加・タグ追加
-    unless Product.find_by(user_id: coordination.user_id, url: entry.url).exists?
+    unless Product.where(user_id: coordination.user_id, url: entry.url).exists?
       Product.create(
         title: entry.title,
         url: entry.url,

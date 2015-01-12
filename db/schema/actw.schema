@@ -70,7 +70,7 @@ create_table :products, comment: '成果物' do |t|
   t.int      :category_id, null: true, comment: 'カテゴリID'
   t.int      :user_id, comment: 'ユーザID'
   t.tinyint  :manual, limit: 1, default: 0, comment: '手動登録'
-  t.int      :job_id, null: true, comment: '連携ジョブ番号'
+  t.int      :job_number, null: true, comment: '連携ジョブ番号'
   t.datetime :published_at, comment: '公開日'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
