@@ -66,7 +66,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'database_rollbacker', path: '/Users/nishio/Programming/database_rollbacker/'
+  gem 'database_rollbacker'
 end
 
 # Use ActiveModel has_secure_password
