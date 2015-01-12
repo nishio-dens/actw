@@ -15,6 +15,7 @@ namespace :db do
         .join("\n")
       f.puts(settings)
     end
+    sh 'bundle exec convergence -c ./config/dev_database.yml -i ./db/schema/actw.schema --apply'
   end
 
   task :overhaul do
