@@ -1,3 +1,8 @@
+PATH
+  remote: /Users/nishio/Programming/database_rollbacker
+  specs:
+    database_rollbacker (0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -343,6 +348,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   convergence
   database_cleaner
+  database_rollbacker!
   devise
   draper
   factory_girl
