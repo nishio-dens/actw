@@ -12,6 +12,7 @@ class CrawlRssService < BaseService
   private
 
   def persist_entry(coordination, entry)
+    # TODO フィルタ追加・タグ追加
     unless Product.find_by(user_id: coordination.user_id, url: entry.url).exists?
       Product.create(
         title: entry.title,
