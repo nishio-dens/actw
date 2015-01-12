@@ -25,7 +25,6 @@ RSpec.configure do |config|
   # config.mock_with :flexmock
   # config.mock_with :rr
   config.include Devise::TestHelpers, type: :controller
-  config.extend ControllerMacros, type: :controller
   # Filter run
   config.filter_run focus: true
   config.run_all_when_everything_filtered = true
