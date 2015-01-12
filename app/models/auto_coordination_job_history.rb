@@ -36,8 +36,9 @@ class AutoCoordinationJobHistory < ActiveRecord::Base
     end
   end
 
-  def record_failure
+  def record_failure(error_message)
     self.tap do |h|
+      h.error_message = error_message
       h.job_status_id = Division::JobStatus::FAILURE.id
       h.finished_at = Time.current
       h.save

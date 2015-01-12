@@ -4,9 +4,10 @@ class RssCrawlJob < ActiveJob::Base
   def perform(coordination)
     history = AutoCoordinationJobHistory.create_history(self.job_id, coordination)
     begin
+      CrawlRssService.new.execute(coordination)
       history.record_success
-    rescue
-      history.record_failure
+    rescue => e
+      history.record_failure(e.message)
     end
   end
 end
