@@ -9,6 +9,7 @@
 #  coordination_type :string(20)       not null               # 連携先タイプ
 #  tagging           :boolean          default("1"), not null # タグ付け
 #  category_id       :integer                                 # カテゴリID
+#  coordination      :boolean          default("1"), not null # 自動連携ON/OFF
 #  last_updated_at   :datetime                                # 最終連携日時
 #  created_at        :datetime         not null               # 作成日時
 #  updated_at        :datetime         not null               # 更新日時
