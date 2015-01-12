@@ -8,6 +8,7 @@ namespace :db do
 
     File.open("#{Rails.root}/config/dev_database.yml", "w") do |f|
       settings = rails_database[env]
+        .symbolize_keys
         .merge(adapter: 'mysql')
         .merge(host: '127.0.0.1')
         .map { |k, v| "#{k}: #{v}" }
