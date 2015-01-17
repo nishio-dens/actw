@@ -36,6 +36,7 @@ gem 'cocoon'
 gem 'active_hash'
 gem 'sidekiq'
 gem 'feedjira'
+gem 'sanitize'
 
 group :development do
   gem 'convergence'
