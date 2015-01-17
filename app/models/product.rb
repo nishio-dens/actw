@@ -32,6 +32,7 @@ class Product < ActiveRecord::Base
   validates :published_at, presence: true
 
   before_create :increment_filter_data_count_on_create
+  before_update :update_filter_data_count
   before_destroy :decrement_filter_data_count_and_destroy_product_filters
   before_create :increment_user_category_summary_count
   before_update :update_user_category_summary_count
@@ -39,11 +40,20 @@ class Product < ActiveRecord::Base
 
   private
 
-  # FIXME: フィルターアップデートのタイミングでカウントが更新されない
-
   def increment_filter_data_count_on_create
     self.product_filters.each do |filter|
       Filter.increment_counter(:data_count, filter.filter_id)
+    end
+  end
+
+  def update_filter_data_count
+    old_filter_ids = ProductFilter.where(product_id: self.id).map(&:filter_id)
+    new_filter_ids = self.product_filters.map(&:filter_id)
+    (new_filter_ids - old_filter_ids).each do |new_filter_id|
+      Filter.increment_counter(:data_count, new_filter_id)
+    end
+    (old_filter_ids - new_filter_ids).each do |remove_filter_id|
+      Filter.decrement_counter(:data_count, remove_filter_id)
     end
   end
 
