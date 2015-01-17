@@ -3,8 +3,8 @@ class Division::RssField < ActiveHash::Base
 
   self.data = [
     { id: 'title'        , name: 'タイトル' },
-    { id: 'author_name'  , name: '著者名' },
-    { id: 'tag'          , name: 'タグ' },
+    { id: 'author'       , name: '著者名' },
+    { id: 'categories'   , name: 'タグ' },
     { id: 'url'          , name: 'URL' },
   ]
 

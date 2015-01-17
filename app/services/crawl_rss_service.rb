@@ -11,6 +11,27 @@ class CrawlRssService < BaseService
 
   private
 
+  def feed_match?(coordination_conditions, feed)
+    coordination_conditions.any? do |condition|
+      value = feed.send(condition.condition_key)
+      if !value.present?
+        false
+      elsif condition.predicate == 'cont'
+        if value.is_a? Array
+          value.any? { |v| v.to_s.include?(condition.condition_value) }
+        else
+          value.to_s.include?(condition.condition_value)
+        end
+      elsif condition.predicate == 'eq'
+        if value.is_a? Array
+          value.any? { |v| v.to_s == condition.condition_value }
+        else
+          value.to_s == condition.condition_value
+        end
+      end
+    end
+  end
+
   def persist_entry(coordination, job_number, entry)
     unless Product.where(user_id: coordination.user_id, url: entry.url).exists?
       product = Product.new(
