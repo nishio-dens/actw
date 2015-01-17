@@ -7,7 +7,7 @@ class RssCrawlJob < ActiveJob::Base
       CrawlRssService.new.execute(coordination, history.id)
       history.record_success
     rescue => e
-      history.record_failure(e.message)
+      history.record_failure(e.message + e.backtrace.join("\n"))
     end
   end
 end

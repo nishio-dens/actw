@@ -14,7 +14,7 @@ class CrawlRssService < BaseService
   def persist_entry(coordination, job_number, entry)
     # TODO フィルタ追加・タグ追加
     unless Product.where(user_id: coordination.user_id, url: entry.url).exists?
-      Product.create(
+      product = Product.new(
         title: entry.title,
         url: entry.url,
         description: entry.summary,
