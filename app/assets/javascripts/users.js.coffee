@@ -10,6 +10,6 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
         filter.html("Request ERROR")
       success: (data, textStatus, jqXHR) ->
-        productList = template.render(data["products"])
+        productList = template.render(data["products"] || [])
         filter.html(productList)
         filter.find('.product-edit-link').removeClass("hidden")
