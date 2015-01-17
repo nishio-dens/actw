@@ -61,7 +61,7 @@ class Product < ActiveRecord::Base
     self.product_filters.each do |filter|
       Filter.decrement_counter(:data_count, filter.filter_id)
     end
-    self.product_filters.each(&:destroy)
+    ProductFilter.where(product_id: self.id).delete_all
   end
 
   def increment_user_category_summary_count
