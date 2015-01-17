@@ -2,18 +2,19 @@ require 'feedjira'
 
 class CrawlRssService < BaseService
   def execute(coordination, job_number)
-    feed = Feedjira::Feed.fetch_and_parse(coordination.url)
-    # TODO conditionを考慮
-    feed.entries.each do |entry|
-      persist_entry(coordination, job_number, entry)
-    end
+    Feedjira::Feed
+      .fetch_and_parse(coordination.url)
+      .entries
+      .select { |entry| entry_match?(:all, coordination.coordination_conditions, entry) }
+      .reject { |entry| entry_match?(:any, coordination.coordination_exclude_conditions, entry) }
+      .each { |entry| persist_entry(coordination, job_number, entry) }
   end
 
   private
 
-  def feed_match?(coordination_conditions, feed)
-    coordination_conditions.any? do |condition|
-      value = feed.send(condition.condition_key)
+  def entry_match?(any_all, coordination_conditions, entry)
+    coordination_conditions.send("#{any_all}?") do |condition|
+      value = entry.send(condition.condition_key)
       if !value.present?
         false
       elsif condition.predicate == 'cont'
