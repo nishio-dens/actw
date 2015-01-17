@@ -39,15 +39,17 @@ class Product < ActiveRecord::Base
 
   private
 
+  # FIXME: フィルターアップデートのタイミングでカウントが更新されない
+
   def increment_filter_data_count_on_create
-    self.filters.each do |filter|
-      Filter.increment_counter(:data_count, filter.id)
+    self.product_filters.each do |filter|
+      Filter.increment_counter(:data_count, filter.filter_id)
     end
   end
 
   def decrement_filter_data_count_and_destroy_product_filters
-    self.filters.each do |filter|
-      Filter.decrement_counter(:data_count, filter.id)
+    self.product_filters.each do |filter|
+      Filter.decrement_counter(:data_count, filter.filter_id)
     end
     self.product_filters.each(&:destroy)
   end
