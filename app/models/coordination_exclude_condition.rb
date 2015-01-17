@@ -13,7 +13,6 @@
 
 class CoordinationExcludeCondition < ActiveRecord::Base
   belongs_to :coordination
-  belongs_to :category
 
   validates :condition_key, presence: true, length: { maximum: 50 }
   validates :predicate, presence: true, length: { maximum: 10 }
