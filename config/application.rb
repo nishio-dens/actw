@@ -22,5 +22,13 @@ module Actw
 
     config.autoload_paths += Dir["#{config.root}/app/validators"]
     config.active_job.queue_adapter = :sidekiq
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.test_framework :rspec
+      g.jbuilder false
+      g.template_engine :erb
+    end
   end
 end
