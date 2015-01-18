@@ -8,6 +8,7 @@ class CrawlRssService < BaseService
       .select { |entry| entry_match?(:all, coordination.coordination_conditions, entry) }
       .reject { |entry| entry_match?(:any, coordination.coordination_exclude_conditions, entry) }
       .each { |entry| persist_entry(coordination, job_number, entry) }
+      .count
   end
 
   private
