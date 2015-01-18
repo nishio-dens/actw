@@ -7,7 +7,6 @@ class ManualRegistrationsController < ApplicationController
 
   def create
     @form = Form::Product.new(product_params.merge(user_id: current_user.id))
-    binding.pry
     if @form.save
       redirect_to mypages_path, flash: { success: "#{@form.title} を登録しました。" }
     else
