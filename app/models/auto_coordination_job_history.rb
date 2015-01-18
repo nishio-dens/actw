@@ -25,7 +25,7 @@ class AutoCoordinationJobHistory < ActiveRecord::Base
     AutoCoordinationJobHistory.create(
       job_id: job_id,
       coordination_id: coordination.id,
-      job_name: coordination.name,
+      job_name: coordination.title,
       job_status_id: Division::JobStatus::RUNNING.id
     )
   end
