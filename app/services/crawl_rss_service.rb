@@ -8,6 +8,7 @@ class CrawlRssService < BaseService
         .entries
         .select { |entry| entry_match?(:all, coordination.coordination_conditions, entry) }
         .reject { |entry| entry_match?(:any, coordination.coordination_exclude_conditions, entry) }
+        .reject { |entry| Product.where(user_id: coordination.user_id, url: entry.url).exists? }
         .each { |entry| persist_entry(coordination, job_number, entry) }
         .count
     end
@@ -37,22 +38,20 @@ class CrawlRssService < BaseService
   end
 
   def persist_entry(coordination, job_number, entry)
-    unless Product.where(user_id: coordination.user_id, url: entry.url).exists?
-      product = Product.new(
-        title: entry.title,
-        url: entry.url,
-        description: entry.summary,
-        category_id: coordination.category_id,
-        user_id: coordination.user_id,
-        manual: false,
-        job_number: job_number,
-        published_at: entry.published
-      )
-      product.tag_list = entry.categories if coordination.tagging
-      coordination.coordination_filters.each do |filter|
-        product.product_filters.build(filter_id: filter.filter_id)
-      end
-      product.save!
+    product = Product.new(
+      title: entry.title,
+      url: entry.url,
+      description: entry.summary,
+      category_id: coordination.category_id,
+      user_id: coordination.user_id,
+      manual: false,
+      job_number: job_number,
+      published_at: entry.published
+    )
+    product.tag_list = entry.categories if coordination.tagging
+    coordination.coordination_filters.each do |filter|
+      product.product_filters.build(filter_id: filter.filter_id)
     end
+    product.save!
   end
 end
