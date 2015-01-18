@@ -2,13 +2,15 @@ require 'feedjira'
 
 class CrawlRssService < BaseService
   def execute(coordination, job_number)
-    Feedjira::Feed
-      .fetch_and_parse(coordination.url)
-      .entries
-      .select { |entry| entry_match?(:all, coordination.coordination_conditions, entry) }
-      .reject { |entry| entry_match?(:any, coordination.coordination_exclude_conditions, entry) }
-      .each { |entry| persist_entry(coordination, job_number, entry) }
-      .count
+    Product.transaction do
+      Feedjira::Feed
+        .fetch_and_parse(coordination.url)
+        .entries
+        .select { |entry| entry_match?(:all, coordination.coordination_conditions, entry) }
+        .reject { |entry| entry_match?(:any, coordination.coordination_exclude_conditions, entry) }
+        .each { |entry| persist_entry(coordination, job_number, entry) }
+        .count
+    end
   end
 
   private
@@ -50,11 +52,7 @@ class CrawlRssService < BaseService
       coordination.coordination_filters.each do |filter|
         product.product_filters.build(filter_id: filter.filter_id)
       end
-      unless product.save
-        raise ActiveRecord::RecordInvalid.new(
-          "SaveError[coordination_id: #{coordination.id}]" + product.errors.full_messages.join("\n")
-        )
-      end
+      product.save!
     end
   end
 end
