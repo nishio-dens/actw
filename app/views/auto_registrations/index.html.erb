@@ -86,7 +86,7 @@
         <%= render 'shared/job_history_label', job: job %>
       </td>
       <td><%= job.job_name %></td>
-      <td>0</td>
+      <td><%= job.data_count %></td>
       <td><%= job.created_at.to_s %></td>
       <td>
         <%= link_to '連携詳細', '#', class: 'btn btn-default' %>
