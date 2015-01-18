@@ -63,4 +63,42 @@
   </div> <!-- /table-responsive-->
 </div> <!-- /actw-settings -->
 
+<hr>
+
+<div class="col-md-12 actw-settings">
+<h2>自動連携履歴 (直近20件)</h2>
+
+  <div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>連携名称</th>
+        <th>連携データ数</th>
+        <th>連携日時</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @job_histories.each do |job| %>
+    <tr class="item">
+      <td width="70px">
+        <%= render 'shared/job_history_label', job: job %>
+      </td>
+      <td><%= job.job_id %></td>
+      <td>0</td>
+      <td><%= job.created_at.to_s %></td>
+      <td>
+        <%= link_to '連携詳細', '#', class: 'btn btn-default' %>
+        <%= link_to '連携取消', '#', class: 'btn btn-danger' %>
+      </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div> <!-- /table-responsive-->
+
+
+</div> <!-- /actw-settings -->
+
 </div>

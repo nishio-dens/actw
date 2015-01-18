@@ -3,6 +3,10 @@ class AutoRegistrationsController < ApplicationController
 
   def index
     @coordinations = Coordination.where(user_id: current_user.id)
+    @job_histories = AutoCoordinationJobHistory
+      .where(coordination_id: @coordinations.map(&:id))
+      .order(created_at: :desc)
+      .limit(20)
   end
 
   def execute_coordination

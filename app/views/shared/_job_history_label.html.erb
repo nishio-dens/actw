@@ -1,0 +1,7 @@
+<% if job.job_status_id == 'running' %>
+  <label class="label label-info">実行中</label>
+<% elsif job.job_status_id == 'success' %>
+  <label class="label label-success">成功</label>
+<% else %>
+  <label class="label label-danger">失敗</label>
+<% end %>
