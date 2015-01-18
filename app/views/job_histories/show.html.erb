@@ -1,2 +1,57 @@
-<h1>JobHistories#show</h1>
-<p>Find me in app/views/job_histories/show.html.erb</p>
+<div class="page-top">
+  <h1><%= @job_history.created_at %> 実施の <%= @job_history.job_name %> の自動連携詳細</h1>
+</div>
+
+<br>
+
+<table class="table">
+  <tbody>
+  <tr>
+    <th scope="row">ジョブ番号</th>
+    <td><%= @job_history.job_id %></td>
+  </tr>
+  <tr>
+    <th scope="row">連携名称</th>
+    <td><%= @job_history.job_name %></td>
+  </tr>
+  <tr>
+    <th scope="row">実行開始日時</th>
+    <td><%= @job_history.created_at %></td>
+  </tr>
+  <tr>
+    <th scope="row">連携ステータス</th>
+    <td><%= render 'shared/job_history_label', job: @job_history %></td>
+  </tr>
+  <% if @job_history.job_status_id == 'failure' %>
+  <tr>
+    <th scope="row">エラー原因</th>
+    <td>データ取得に失敗しました。URLが正しいかどうかお確かめ下さい。</td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="row mt-10">
+  <div class="actw-filters">
+    <div class="panel panel-default actw-panel">
+      <div class="panel-heading">
+        <h2>取得したデータ(<%= @job_history.data_count %>)</h2>
+      </div>
+      <ul class="list-group"><!-- list-group -->
+
+        <%= render 'shared/products', products: @products %>
+
+      </ul> <!-- /list-group -->
+    </div>
+  </div>
+</div>
+
+<div class="form-action text-center mt-10">
+  <%= link_to auto_registrations_path, class: 'btn btn-default' do %>
+    <i class="fa fa-angle-double-left"></i> 自動連携一覧に戻る
+  <% end %>
+</div>
+
+
