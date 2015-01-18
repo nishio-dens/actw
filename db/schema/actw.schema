@@ -44,7 +44,7 @@ create_table :tags, comment: 'タグ' do |t|
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 
-  t.index :name, unique: true
+  t.index :name
 end
 
 create_table :taggings, comment: 'タギング' do |t|
