@@ -51,7 +51,7 @@ class CrawlRssService < BaseService
         product.product_filters.build(filter_id: filter.filter_id)
       end
       unless product.save
-        raise ActiveRecord::RecordInvalid(
+        raise ActiveRecord::RecordInvalid.new(
           "SaveError[coordination_id: #{coordination.id}]" + product.errors.full_messages.join("\n")
         )
       end

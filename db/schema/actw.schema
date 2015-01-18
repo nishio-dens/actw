@@ -55,8 +55,8 @@ create_table :taggings, comment: 'タギング' do |t|
   t.int      :tagger_id, null: true, comment: 'タグ所有者ID'
   t.varchar  :tagger_type, null: true, comment: 'タグ所有者クラス'
   t.varchar  :context, limit: 128, null: true, comment: 'タグ種別'
-  t.datetime :created_at, comment: '作成日時'
-  t.datetime :updated_at, comment: '更新日時'
+  t.datetime :created_at, null: true, comment: '作成日時'
+  t.datetime :updated_at, null: true, comment: '更新日時'
 
   t.index [:tag_id, :taggable_id, :taggable_type, :context, :tagger_id, :tagger_type], name: 'taggings_index', unique: true
   t.index [:taggable_id, :taggable_type, :context]
