@@ -170,8 +170,10 @@ end
 create_table :auto_coordination_job_histories, comment: '自動連携ジョブ履歴' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment'
   t.int      :coordination_id, comment: '自動連携ID'
+  t.varchar  :job_name, comment: 'ジョブ名称'
   t.varchar  :job_id, limit: 40, comment: 'ジョブID'
   t.varchar  :job_status_id, limit: 10, comment: 'ジョブステータス'
+  t.int      :data_count, default: 0, comment: '連携データ数'
   t.varchar  :request_program_id, limit: 10, null: true, comment: '要求元プログラム'
   t.text     :error_message, null: true, comment: '実行エラーメッセージ'
   t.datetime :finished_at, null: true, comment: 'ジョブ実行完了日時'
