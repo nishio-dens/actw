@@ -177,6 +177,4 @@ create_table :auto_coordination_job_histories, comment: '自動連携ジョブ�
   t.datetime :finished_at, null: true, comment: 'ジョブ実行完了日時'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
-
-  t.foreign_key :coordination_id, reference: :coordinations, reference_column: :id
 end
