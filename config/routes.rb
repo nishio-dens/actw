@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         post :switch_auto_coordination
       end
     end
+    resources :job_histories, only: [:show, :destroy]
 
     namespace :auto_registrations do
       resources :rss, only: [:new, :create, :edit, :update, :destroy]
