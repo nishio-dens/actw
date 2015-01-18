@@ -89,8 +89,8 @@
       <td><%= job.data_count %></td>
       <td><%= job.created_at.to_s %></td>
       <td>
-        <%= link_to '連携詳細', '#', class: 'btn btn-default' %>
-        <%= link_to '連携取消', '#', class: 'btn btn-danger' %>
+        <%= link_to '連携詳細', job_history_path(job), class: 'btn btn-default' %>
+        <%= link_to '連携取消', job_history_path(job), method: :delete, class: 'btn btn-danger', data: { confirm: "#{job.job_name} にて連携した #{job.data_count}個のデータを削除します。よろしいですか。" } %>
       </td>
     </tr>
     <% end %>
