@@ -8,6 +8,7 @@
 #  job_id             :string(40)       not null               # ジョブID
 #  job_status_id      :string(10)       not null               # ジョブステータス
 #  data_count         :integer          default("0"), not null # 連携データ数
+#  user_id            :integer                                 # ユーザID
 #  request_program_id :string(10)                              # 要求元プログラム
 #  error_message      :text(65535)                             # 実行エラーメッセージ
 #  finished_at        :datetime                                # ジョブ実行完了日時
