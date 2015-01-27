@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :categories, through: :user_category_summaries
 
   validates :name, presence: true, uniqueness: true
+  validates :username, presence: true
   validates :email, presence: true, email: true, uniqueness: true
   validates :password, presence: true
 
