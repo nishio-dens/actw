@@ -1,15 +1,32 @@
-<h2>Log in</h2>
+<div class="row actw-settings">
+<div class="col-md-12">
+  <h1>ログイン</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <hr>
+
+  <% if flash.present? %>
+  <div class="alert alert-danger" role="alert">
+  <% flash.each do |_, value| %>
+    <%= value %>
+  <% end %>
+  </div>
+  <% end %>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
     <%= f.input :email, required: false, autofocus: true %>
     <%= f.input :password, required: false %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
+    <div class="form-action text-center mt-10">
+      <%= button_tag 'ログインする', type: :submit, class: 'btn btn-primary' %>
+    </div>
+
 <% end %>
 
+<hr>
+
 <%= render "devise/shared/links" %>
+</div>
+</div>
