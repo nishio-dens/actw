@@ -3,7 +3,8 @@
 # Table name: users # ユーザ
 #
 #  id                     :integer          not null, primary key  # ID
-#  name                   :string(255)      not null               # ユーザ名
+#  name                   :string(255)      not null               # アカウント名
+#  username               :string(255)      default(""), not null  # ユーザ名
 #  email                  :string(255)      not null               # メールアドレス
 #  encrypted_password     :string(255)      not null               # 暗号化済パスワード
 #  reset_password_token   :string(255)                             # リセットパスワードトークン
