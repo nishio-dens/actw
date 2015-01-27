@@ -57,12 +57,12 @@ ja:
 #      unlocked: 'Your account was successfully unlocked. You are now signed in.'
     mailer:
       confirmation_instructions:
-        subject: '【Surveysからのお知らせ】 仮登録を受け付けました。'
+        subject: '【ACT Weaverからのお知らせ】 仮登録を受け付けました。'
 #        subject: 'Confirmation instructions'
       reset_password_instructions:
-        subject: '【Surveysからのお知らせ】 パスワードの再設定を受け付けました。'
+        subject: '【ACT Weaverからのお知らせ】 パスワードの再設定を受け付けました。'
 #        subject: 'Reset password instructions'
       unlock_instructions:
-        subject: '【Surveysからのお知らせ】 アカウントの凍結を解除致しました。'
+        subject: '【ACT Weaverからのお知らせ】 アカウントの凍結を解除致しました。'
 #        subject: 'Unlock Instructions'
 
