@@ -1,4 +1,8 @@
-<h2>Change your password</h2>
+<div class="row actw-settings">
+<div class="col-md-12">
+  <h1>パスワードを変更する</h1>
+
+  <hr>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -7,13 +11,18 @@
   <%= f.full_error :reset_password_token %>
 
   <div class="form-inputs">
-    <%= f.input :password, label: "New password", required: true, autofocus: true %>
-    <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+    <%= f.input :password, label: "新しいパスワード", required: true, autofocus: true %>
+    <%= f.input :password_confirmation, label: "パスワード再入力", required: true %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+  <div class="form-action text-center mt-10">
+    <%= f.button :submit, "パスワードを変更する" %>
   </div>
 <% end %>
 
+<hr>
+
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
