@@ -12,6 +12,7 @@ create_table :users, comment: 'ユーザ' do |t|
   t.varchar  :last_sign_in_ip, null: true, comment: '最後にログインしたログイン元IP'
   t.varchar  :uid, default: '', comment: 'UID'
   t.varchar  :provider, default: '', comment: 'プロバイダ'
+  t.tinyint  :temporary, default: 1, comment: '仮登録'
   t.datetime :created_at, comment: '作成日時'
   t.datetime :updated_at, comment: '更新日時'
 

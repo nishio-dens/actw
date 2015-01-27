@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :string(255)                             # 最後にログインしたログイン元IP
 #  uid                    :string(255)      default(""), not null  # UID
 #  provider               :string(255)      default(""), not null  # プロバイダ
+#  temporary              :integer          default("1"), not null # 仮登録
 #  created_at             :datetime         not null               # 作成日時
 #  updated_at             :datetime         not null               # 更新日時
 #
