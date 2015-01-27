@@ -6,6 +6,12 @@
   <%= simple_form_for(@user, url: user_registration_path, method: :post, wrapper: :horizontal_form) do |f| %>
     <%= f.input :name %>
     <%= f.input :email %>
+    <%= f.input :password %>
+
+    <div class="form-action text-center mt-10">
+      <%= button_tag '登録する', type: :submit, class: 'btn btn-primary' %>
+    </div>
   <% end %>
+
   </div>
 </div>

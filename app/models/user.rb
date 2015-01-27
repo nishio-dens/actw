@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :email, presence: true, email: true
+  validates :password, presence: true
 
   def self.find_for_twitter_oauth(auth, sign_in_resource)
     user = User.where(provider: auth.provider, uid: auth.uid).first
