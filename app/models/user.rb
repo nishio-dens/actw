@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   has_many :categories, through: :user_category_summaries
 
   validates :name, presence: true
-  validates :email, presence: true, email: true
+  validates :email, presence: true, email: true, uniqueness: true
   validates :password, presence: true
 
   def self.find_for_twitter_oauth(auth, sign_in_resource)
