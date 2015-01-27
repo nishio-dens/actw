@@ -17,7 +17,7 @@ create_table :users, comment: 'ユーザ' do |t|
   t.datetime :updated_at, comment: '更新日時'
 
   t.index [:email], unique: true
-  t.index [:uid, :provider], unique: true
+  t.index [:uid, :provider]
 end
 
 create_table :user_profiles, comment: 'ユーザプロフィール' do |t|
