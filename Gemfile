@@ -37,6 +37,7 @@ gem 'active_hash'
 gem 'sidekiq'
 gem 'feedjira'
 gem 'sanitize'
+gem 'email_validator'
 
 group :development do
   gem 'convergence'

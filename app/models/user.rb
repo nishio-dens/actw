@@ -29,6 +29,9 @@ class User < ActiveRecord::Base
   has_many :user_category_summaries
   has_many :categories, through: :user_category_summaries
 
+  validates :name, presence: true
+  validates :email, presence: true, email: true
+
   def self.find_for_twitter_oauth(auth, sign_in_resource)
     user = User.where(provider: auth.provider, uid: auth.uid).first
     if user.present?

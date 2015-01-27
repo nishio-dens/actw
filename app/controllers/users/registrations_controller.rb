@@ -4,6 +4,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def new
+    @user = User.new
+  end
+
   def create
     @user = User.new(registration_params)
     if @user.valid?
