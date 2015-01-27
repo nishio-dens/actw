@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in @user
       redirect_to mypages_path
     else
-      super
+      render :new
     end
   end
 

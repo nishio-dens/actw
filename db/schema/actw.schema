@@ -1,6 +1,7 @@
 create_table :users, comment: 'ユーザ' do |t|
   t.int      :id, primary_key: true, extra: 'auto_increment', comment: 'ID'
-  t.varchar  :name, limit: 255, comment: 'ユーザ名'
+  t.varchar  :name, limit: 255, comment: 'アカウント名'
+  t.varchar  :username, limit: 255, comment: 'ユーザ名'
   t.varchar  :email, comment: 'メールアドレス'
   t.varchar  :encrypted_password, comment: '暗号化済パスワード'
   t.varchar  :reset_password_token, null: true, comment: 'リセットパスワードトークン'
