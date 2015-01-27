@@ -12,7 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(registration_params)
     if @user.valid?
       @user.save
-      render 'finish'
+      sign_in @user
+      redirect_to mypages_path
     else
       super
     end
