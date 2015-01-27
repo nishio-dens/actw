@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
     else
       User.create(
         name: auth.info.nickname,
+        username: auth.info.nickname,
         provider: auth.provider,
         uid: auth.uid,
         email: auth.info.nickname + "@dummy.com",
