@@ -189,6 +189,7 @@ ja:
       size_too_small: ! '%{attribute}は %{file_size} 以上で入力してください。'
       size_too_big: ! '%{attribute}は %{file_size} 以下で入力してください。'
       invalid_url: URLの形式が正しくありません。
+      invalid_account_format: アカウント名の形式が正しくありません。半角英数または「-」「_」のみご利用になれます。
     template:
       body: 次の項目を確認してください。
       header:

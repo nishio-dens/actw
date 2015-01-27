@@ -18,6 +18,7 @@
   <h2>ソーシャルアカウントを利用せず登録する</h2>
   <%= simple_form_for(@user, url: user_registration_path, method: :post, wrapper: :horizontal_form) do |f| %>
     <%= f.input :name %>
+    <%= f.input :username %>
     <%= f.input :email %>
     <%= f.input :password %>
 
