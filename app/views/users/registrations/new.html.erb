@@ -1,17 +1,30 @@
 <div class="row actw-settings">
-  <div class="col-md-12">
-    <h1>ユーザ登録</h1>
-    <hr>
+<div class="col-md-12">
+  <h1>新規登録</h1>
+  <hr>
+  <h2>ACT Weaverへようこそ！ 無料登録して、ACT Weaverをはじめましょう。</h2>
 
+  <p>ご登録の際は<%= link_to '利用規約', '#' %>に同意のうえ、登録ボタンを押してください。<br />
+  アカウントをお持ちの方は、
+  <%= link_to 'ログインページ', new_user_session_path %> からログインしてください。
+  </p>
+
+  <div class="form-action text-center mt-10">
+  <%= link_to user_omniauth_authorize_path(provider: 'twitter'), class: 'btn btn-default' do %>
+    <i class="fa fa-twitter"></i> Twitterアカウントで登録する
+  <% end %>
+  </div>
+
+  <h2>ソーシャルアカウントを利用せず登録する</h2>
   <%= simple_form_for(@user, url: user_registration_path, method: :post, wrapper: :horizontal_form) do |f| %>
     <%= f.input :name %>
     <%= f.input :email %>
     <%= f.input :password %>
 
     <div class="form-action text-center mt-10">
-      <%= button_tag '登録する', type: :submit, class: 'btn btn-primary' %>
+      <%= button_tag '利用規約に同意して登録する', type: :submit, class: 'btn btn-primary' %>
     </div>
   <% end %>
 
-  </div>
+</div>
 </div>

@@ -271,7 +271,7 @@ ja:
       user: ユーザ
     attributes:
       user:
-        username: ユーザ名
+        name: ユーザ名
         email: メールアドレス
         password: パスワード
       form/filter:
