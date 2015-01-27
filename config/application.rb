@@ -20,7 +20,7 @@ module Actw
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
 
-    config.autoload_paths += Dir["#{config.root}/app/validators"]
+    config.autoload_paths += Dir["#{config.root}/app/validators", "#{config.root}/lib"]
     config.active_job.queue_adapter = :sidekiq
 
     config.generators do |g|
